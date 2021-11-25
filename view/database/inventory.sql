@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 25, 2021 at 10:38 AM
--- Server version: 10.4.20-MariaDB
--- PHP Version: 8.0.8
+-- Generation Time: Nov 25, 2021 at 11:40 AM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 8.0.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -70,15 +70,18 @@ CREATE TABLE `laptop` (
   `hdd` varchar(100) NOT NULL,
   `warranty` varchar(100) NOT NULL,
   `deleverydate` varchar(100) NOT NULL,
-  `procurementdate` varchar(100) NOT NULL
+  `procurementdate` varchar(100) NOT NULL,
+  `status` varchar(100) DEFAULT NULL,
+  `serial` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `laptop`
 --
 
-INSERT INTO `laptop` (`sl`, `assetid`, `model`, `dsn`, `laptopusername`, `maker`, `hostname`, `ip`, `domain`, `cpu`, `oskey`, `osversion`, `vendor`, `procrumentref`, `ram`, `hdd`, `warranty`, `deleverydate`, `procurementdate`) VALUES
-(1, 'h', 'h', 'h', 'h', 'h', 'h', 'hh', 'j', 'hh', 'hh', 'h', 'j', 'h', '4', '120', '1', '2021-11-24', '2021-11-12');
+INSERT INTO `laptop` (`sl`, `assetid`, `model`, `dsn`, `laptopusername`, `maker`, `hostname`, `ip`, `domain`, `cpu`, `oskey`, `osversion`, `vendor`, `procrumentref`, `ram`, `hdd`, `warranty`, `deleverydate`, `procurementdate`, `status`, `serial`) VALUES
+(1, 'h', 'h', 'h', 'h', 'h', 'h', 'hh', 'j', 'hh', 'hh', 'h', 'j', 'h', '4', '120', '1', '2021-11-24', '2021-11-12', 'booked', '3456789'),
+(2, 'h', 'h', 'h', 'h', 'h', 'h', 'hh', 'j', 'hh', 'hh', 'h', 'j', 'h', '4', '120', '1', '2021-11-24', '2021-11-12', 'free', '3456789');
 
 --
 -- Indexes for dumped tables
@@ -110,7 +113,7 @@ ALTER TABLE `employee`
 -- AUTO_INCREMENT for table `laptop`
 --
 ALTER TABLE `laptop`
-  MODIFY `sl` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `sl` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
