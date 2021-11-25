@@ -112,7 +112,7 @@ function getlaptop()
     $query2="SELECT * FROM employee";
     $product=get($query,$query2);
     return $product;
-dd($product);
+
 
   }
 ?>
