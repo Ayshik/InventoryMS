@@ -88,4 +88,31 @@ function getlaptop()
 
 
   }
+
+  function getlaptopfree()
+  {
+   
+
+  
+
+    $query="SELECT * FROM laptop where status='free'";
+    $product=get($query);
+    return $product;
+
+
+  }
+
+  function getalocated()
+  {
+   
+
+  
+
+    $query="SELECT * FROM laptop where status='booked'";
+    $query2="SELECT * FROM employee";
+    $product=get($query,$query2);
+    return $product;
+dd($product);
+
+  }
 ?>

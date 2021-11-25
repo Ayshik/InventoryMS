@@ -1,5 +1,6 @@
 <?php 
-
+require_once ('Controllers/employeecontroller.php');
+$info=getalocated();
 
 
 $allocate="active";
@@ -43,36 +44,29 @@ include('header.php');
       <th scope="col">Laptop Model</th>
       <th scope="col">Serial Number</th>
       <th scope="col">Laptop ID</th>
-      <th scope="col">Bag</th>
-      <th scope="col">Mouse</th>
       <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Saif</td>
-      <td>777</td>
-      <td>IT</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Saif</td>
-      <td>777</td>
-      <td>IT</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Saif</td>
-      <td>777</td>
-      <td>IT</td>
-    </tr>
-    <tr>
-      <th scope="row">4</th>
-      <td>Saif</td>
-      <td>777</td>
-      <td>IT</td>
-    </tr>
+  <?php
+                  foreach($info as $infos)
+                  {
+                    echo "<tr>";
+                     
+                        echo "<td>".$infos["sl"]."</td>";
+						 echo "<td>".$infos["name"]."</td>";
+						  echo "<td>".$infos["department"]."</td>";
+						   echo "<td>".$infos["model"]."</td>";
+                      echo "<td>".$infos["serial"]."</td>";
+					   echo "<td>".$infos["assetid"]."</td>";
+					  
+            
+
+            echo '<td><button class="btn btn-danger"><a href="Controllers/Deleteemployee.php?id='.$infos["sl"].'" i class="fa fa-trash" style="color:white">  Release</a></td>';
+			
+                    echo "</tr>";
+                  }
+                ?>
   </tbody>
 </table>
 	  
