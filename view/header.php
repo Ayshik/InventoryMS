@@ -138,15 +138,6 @@
            
           </li>
           <li class="nav-item">
-            <a href="admin.php" class="nav-link <?php echo $admin ?>">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                Admin
-               
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
             <a href="employee.php" class="nav-link <?php echo $employee ?>">
               <i class="nav-icon fas fa-copy"></i>
               <p>
@@ -160,14 +151,6 @@
               <i class="nav-icon fas fa-chart-pie"></i>
               <p>
                 Laptop List
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="bag.php" class="nav-link <?php echo $bag ?>">
-              <i class="nav-icon fas fa-tree"></i>
-              <p>
-                Bag List
               </p>
             </a>
           </li>
@@ -198,7 +181,7 @@
           </li>
           <li class="nav-item">
             <a href="history.php" class="nav-link <?php echo $history ?>">
-              <i class="nav-icon far fa-image"></i>
+              <i class="nav-icon fas fa-th"></i>
               <p>
                 User History
               </p>

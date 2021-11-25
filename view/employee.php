@@ -2,6 +2,32 @@
 require_once ('Controllers/employeecontroller.php');
 $info=getemployee();
 
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "inventory";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+
+
+
+
+
+    $query = "SELECT * from laptop where status='free'";
+    $result1 = mysqli_query($conn, $query);
+	$result2 = mysqli_query($conn, $query);
+	 $options="";
+  while ($row2=mysqli_fetch_array($result2))
+  {
+   $options=$options."<option>$row2[1]</option>";
+	
+    
+   
+  
+
+
+  }
 $employee="active";
 
 include('header.php');
@@ -19,7 +45,7 @@ include('header.php');
   Add a New Employee
 </button>
 
-<!-- Modal -->
+<!-- Add employee -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -39,7 +65,7 @@ include('header.php');
     <input type="name" class="form-control" name="name" placeholder="Enter Name" id="name" required>
   </div>
   <div class="form-group">
-    <label for="id">ID:</label>
+    <label for="id">Employee ID:</label>
     <input type="id" class="form-control" name="id" placeholder="Enter ID" id="id" required>
   </div>
   <div class="form-group">
@@ -51,8 +77,13 @@ include('header.php');
     <input type="department" class="form-control" placeholder="Enter Department" name="department" required>
   </div>
   <div class="form-group">
-    <label for="text">Laptop Number:</label>
-    <input type="text" class="form-control" placeholder="Enter Laptop Number" name="laptop" required>
+  <select name="laptop">
+  <option value="No">Null</option>
+  <?php while($row1=mysqli_fetch_array($result1));?>
+    <?php echo $options;?>
+  
+  
+  </select>
   </div>
   <input type="checkbox" id="vehicle1" name="mouse" value="yes">
 <label for="vehicle1"> Mouse</label><br>
@@ -71,6 +102,96 @@ include('header.php');
     </div>
   </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- this is for update -->
+<div class="modal fade" id="updatepanel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Employee Update</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+
+
+<form action="Controllers/employeecontroller.php" method="post">
+  <div class="form-group">
+    <label for="name">Name:</label>
+    <input type="name" class="form-control" id="ename" name="name" placeholder="Enter Name" required>
+  </div>
+  <div class="form-group">
+    <label for="id">Employee ID:</label>
+    <input type="id" class="form-control" name="id" placeholder="Enter ID" id="eid" required>
+  </div>
+  <div class="form-group">
+    <label for="designation">Designation:</label>
+    <input type="designation" class="form-control" name="designation" placeholder="Enter Designation" id="edesignation" required>
+  </div>
+  <div class="form-group">
+    <label for="department">Department:</label>
+    <input type="department" class="form-control" placeholder="Enter Department" name="department" id="edepartment" required>
+  </div>
+  <input type="hidden" class="form-control" placeholder="Enter Department" name="ihh" id="ihh" value="" required>
+  <div class="form-group">
+  <label for="department">Laptop ID:</label>
+  <select class="form-control"  id="elaptop" name="laptop">
+  <option value="No">Null</option>
+  <?php while($row1=mysqli_fetch_array($result1));?>
+    <?php echo $options;?>
+  
+  
+  </select>
+  </div>
+ 
+
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" name="" class="btn btn-primary">Update</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- End update -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
           </div><!-- /.col -->
@@ -122,7 +243,7 @@ include('header.php');
 					   echo "<td>".$infos["bag"]."</td>";
 					    echo "<td>".$infos["mouse"]."</td>";
             
- echo '<td><button class="btn btn-success"><a href="Controllers/editemployee.php?id='.$infos["sl"].'" i class="fa fa-pen" style="color:white">  Edit</a></td>';
+ echo '<td><button class="btn btn-success editbutton" data-toggle="modal" name="editbutton"  ><a  i class="fa fa-pen" style="color:white">  Edit</a></td>';
             echo '<td><button class="btn btn-danger"><a href="Controllers/Deleteemployee.php?id='.$infos["sl"].'" i class="fa fa-trash" style="color:white">  Release</a></td>';
 			
                     echo "</tr>";
@@ -145,3 +266,34 @@ include('header.php');
 
 include('footer.php');
 ?>
+<script>
+$(document).ready(function(){
+
+$('.editbutton').on('click',function(){
+
+
+$('#updatepanel').modal('show');
+
+$tr=$(this).closest('tr');
+var data=$tr.children("td").map(function(){
+return $(this).text();
+}).get();
+console.log(data);
+
+$('#ename').val(data[1]);
+$('#eid').val(data[2]);
+$('#edesignation').val(data[3]);
+$('#edepartment').val(data[4]);
+$('#elaptop').val(data[5]);
+$('#ihh').val(data[5]);
+});
+
+
+
+
+
+
+});
+
+
+</script>

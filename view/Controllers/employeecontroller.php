@@ -108,9 +108,9 @@ function getlaptop()
 
   
 
-    $query="SELECT * FROM laptop where status='booked'";
-    $query2="SELECT * FROM employee";
-    $product=get($query,$query2);
+    $query="SELECT * FROM allocation";
+   
+    $product=get($query);
     return $product;
 
 
