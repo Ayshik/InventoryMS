@@ -40,11 +40,11 @@ include('header.php');
     <tr>
       <th scope="col">SN</th>
       <th scope="col">Employee Name</th>
+      <th scope="col">Employee ID</th>
       <th scope="col">Department</th>
-      <th scope="col">Laptop Model</th>
-      <th scope="col">Serial Number</th>
+     
       <th scope="col">Laptop ID</th>
-      <th scope="col">Action</th>
+     
     </tr>
   </thead>
   <tbody>
@@ -54,15 +54,17 @@ include('header.php');
                     echo "<tr>";
                      
                         echo "<td>".$infos["sl"]."</td>";
+
 						 echo "<td>".$infos["name"]."</td>";
+             echo "<td>".$infos["employeeid"]."</td>";
 						  echo "<td>".$infos["department"]."</td>";
-						   echo "<td>".$infos["model"]."</td>";
-                      echo "<td>".$infos["serial"]."</td>";
+						 
+                      
 					   echo "<td>".$infos["assetid"]."</td>";
 					  
-            
+             echo '<td><button class="btn btn-warning"><a href="Controllers/faulty.php?id='.$infos["assetid"].'&amp;eid='.$infos["employeeid"].'" i class="fa fa-trash" style="color:white">  Faulty</a></td>';
 
-            echo '<td><button class="btn btn-danger"><a href="Controllers/Deleteemployee.php?id='.$infos["sl"].'" i class="fa fa-trash" style="color:white">  Release</a></td>';
+            echo '<td><button class="btn btn-danger"><a href="Controllers/laptoprelease.php?id='.$infos["assetid"].'&amp;eid='.$infos["employeeid"].'" i class="fa fa-trash" style="color:white">  Release</a></td>';
 			
                     echo "</tr>";
                   }

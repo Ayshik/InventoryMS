@@ -3,6 +3,9 @@
 $invoice="active";
 
 include('header.php');
+
+require_once ('Controllers/inventorycontroller.php');
+$info=invoiceinfo();
 ?>
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -35,33 +38,33 @@ include('header.php');
       <th scope="col">SN</th>
       <th scope="col">Asset ID</th>
       <th scope="col">Vendor</th>
-      <th scope="col">Purchase Date</th>
-      <th scope="col">Warranty Year</th>
       <th scope="col">Procurement Date</th>
       <th scope="col">Procurement Reference</th>
-      <th scope="col">Action</th>
+      <th scope="col">Delevery Date</th>
+      <th scope="col">Warranty Year</th>
+    
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Saif</td>
-      <td>777</td>
-      <td>IT</td>
-      <td>Intern</td>
-      <td>Super Admin</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
+  <?php
+                  foreach($info as $infos)
+                  {
+                    echo "<tr>";
+                     
+                        echo "<td>".$infos["sl"]."</td>";
+						 echo "<td>".$infos["assetid"]."</td>";
+						  echo "<td>".$infos["vendor"]."</td>";
+              echo "<td>".$infos["procurementdate"]."</td>";
+						   echo "<td>".$infos["procrumentref"]."</td>";
+              echo "<td>".$infos["deleverydate"]."</td>";
+					   echo "<td>".$infos["warranty"]."</td>";
+					    						 
+            
+
+            
+                    echo "</tr>";
+                  }
+                ?>
   </tbody>
 </table>
 	  

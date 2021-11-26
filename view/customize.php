@@ -2,6 +2,9 @@
 
 $customize="active";
 include('header.php');
+
+require_once ('Controllers/inventorycontroller.php');
+$info=customizeinfo();
 ?>
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -33,40 +36,44 @@ include('header.php');
     <tr>
       <th scope="col">SN</th>
       <th scope="col">Asset ID</th>
+      <th scope="col">Laptop Username</th>
+      <th scope="col">DSN</th>
       <th scope="col">Host Name</th>
-      <th scope="col">IP Address</th>
+      <th scope="col">IP</th>
       <th scope="col">Domain</th>
+      <th scope="col">Oparatig System</th>
+      <th scope="col">OS Version</th>
       <th scope="col">RAM</th>
       <th scope="col">HDD</th>
-      <th scope="col">CPU</th>
-      <th scope="col">OS Version</th>
-      <th scope="col">OS Key</th>
-      <th scope="col">Purchase Date</th>
-      <th scope="col">Warranty Year</th>
-      <th scope="col">Action</th>
+      
+      
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Saif</td>
-      <td>777</td>
-      <td>IT</td>
-      <td>Intern</td>
-      <td>Super Admin</td>
-      <td>IPDC-224</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
+  <?php
+                  foreach($info as $infos)
+                  {
+                    echo "<tr>";
+                     
+                        echo "<td>".$infos["sl"]."</td>";
+						 echo "<td>".$infos["assetid"]."</td>";
+             echo "<td>".$infos["laptopusername"]."</td>";
+             echo "<td>".$infos["dsn"]."</td>";
+					   echo "<td>".$infos["hostname"]."</td>";
+					    echo "<td>".$infos["ip"]."</td>";
+              echo "<td>".$infos["domain"]."</td>";
+              echo "<td>".$infos["oskey"]."</td>";
+						  echo "<td>".$infos["osversion"]."</td>";
+              echo "<td>".$infos["ram"]."</td>";
+              echo "<td>".$infos["hdd"]."</td>";
+             
+              					 
+            
+
+              
+                    echo "</tr>";
+                  }
+                ?>
   </tbody>
 </table>
 	  

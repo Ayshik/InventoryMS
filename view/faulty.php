@@ -1,6 +1,7 @@
 <?php 
 
-
+require_once ('Controllers/inventorycontroller.php');
+$info=faulty();
 
 $faulty="active";
 
@@ -46,30 +47,23 @@ include('header.php');
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Saif</td>
-      <td>777</td>
-      <td>IT</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Saif</td>
-      <td>777</td>
-      <td>IT</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Saif</td>
-      <td>777</td>
-      <td>IT</td>
-    </tr>
-    <tr>
-      <th scope="row">4</th>
-      <td>Saif</td>
-      <td>777</td>
-      <td>IT</td>
-    </tr>
+  <?php
+                  foreach($info as $infos)
+                  {
+                    echo "<tr>";
+                     
+                        echo "<td>".$infos["sl"]."</td>";
+						 echo "<td>".$infos["model"]."</td>";
+						  echo "<td>".$infos["serial"]."</td>";
+						   echo "<td>".$infos["assetid"]."</td>";
+                      echo "<td>".$infos["vendor"]."</td>";
+					   
+            
+            echo '<td><button class="btn btn-danger"><a href="Controllers/releasefaultylaptop.php?id='.$infos["sl"].'" i class="fa fa-trash" style="color:white">  Release</a></td>';
+			
+                    echo "</tr>";
+                  }
+                ?>
   </tbody>
 </table>
 	  

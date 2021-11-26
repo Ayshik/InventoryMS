@@ -14,7 +14,7 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 
 
 
-    $query = "SELECT * from laptop where status='free'";
+    $query = "SELECT * from laptop where status='Free'";
     $result1 = mysqli_query($conn, $query);
 	$result2 = mysqli_query($conn, $query);
 	 $options="";
@@ -131,8 +131,9 @@ include('header.php');
 
 
 
-<form action="Controllers/employeecontroller.php" method="post">
+<form action="Controllers/inventorycontroller.php" method="post">
   <div class="form-group">
+  <input type="hidden" class="form-control" id="sl" name="sl" placeholder="Enter Name" required>
     <label for="name">Name:</label>
     <input type="name" class="form-control" id="ename" name="name" placeholder="Enter Name" required>
   </div>
@@ -166,7 +167,7 @@ include('header.php');
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" name="" class="btn btn-primary">Update</button>
+        <button type="submit" name="update" class="btn btn-primary">Update</button>
       </div>
       </form>
     </div>
@@ -216,11 +217,11 @@ include('header.php');
     <tr>
       <th scope="col">SN</th>
       <th scope="col">Name</th>
-      <th scope="col">ID</th>
+      <th scope="col">Employee ID</th>
       <th scope="col">Department</th>
       <th scope="col">Designation</th>
 
-      <th scope="col">Laptop</th>
+      <th scope="col">Laptop ID</th>
       <th scope="col">Bag</th>
       <th scope="col">Mouse</th>
       <th scope="col"></th>
@@ -244,7 +245,7 @@ include('header.php');
 					    echo "<td>".$infos["mouse"]."</td>";
             
  echo '<td><button class="btn btn-success editbutton" data-toggle="modal" name="editbutton"  ><a  i class="fa fa-pen" style="color:white">  Edit</a></td>';
-            echo '<td><button class="btn btn-danger"><a href="Controllers/Deleteemployee.php?id='.$infos["sl"].'" i class="fa fa-trash" style="color:white">  Release</a></td>';
+            echo '<td><button class="btn btn-danger"><a href="Controllers/Deleteemployee.php?id='.$infos["sl"].'&amp;eid='.$infos["id"].'&amp;dep='.$infos["department"].'&amp;des='.$infos["designation"].'&amp;essetid='.$infos["laptop"].'&amp;name='.$infos["name"].'" i class="fa fa-trash" style="color:white">  Release</a></td>';
 			
                     echo "</tr>";
                   }
@@ -279,7 +280,7 @@ var data=$tr.children("td").map(function(){
 return $(this).text();
 }).get();
 console.log(data);
-
+$('#sl').val(data[0]);
 $('#ename').val(data[1]);
 $('#eid').val(data[2]);
 $('#edesignation').val(data[3]);

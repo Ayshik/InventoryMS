@@ -54,7 +54,7 @@ include('header.php');
                         echo "<td>".$infos["sl"]."</td>";
 						 echo "<td>".$infos["model"]."</td>";
 						  echo "<td>".$infos["serial"]."</td>";
-						   echo "<td>".$infos["laptopusername"]."</td>";
+						   echo "<td>".$infos["assetid"]."</td>";
                      
             
 

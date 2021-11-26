@@ -21,12 +21,28 @@ if(isset($_POST["insertlaptop"]))
   $laptop=$_POST["laptop"];
   $mouse=$_POST["mouse"];
     $bag=$_POST["bag"];
-
-
+if($laptop=='NULL')
+{
   $query="INSERT INTO `employee`(`sl`, `name`, `id`, `department`, `designation`, `laptop`, `bag`, `mouse`) VALUES ('','$name','$id','$designation','$department','$laptop','$mouse','$bag')";
   
   //echo $query;
 execute($query);
+}
+else 
+{
+
+
+
+
+  $query="INSERT INTO `employee`(`sl`, `name`, `id`, `department`, `designation`, `laptop`, `bag`, `mouse`) VALUES ('','$name','$id','$designation','$department','$laptop','$mouse','$bag')";
+  $query2="INSERT INTO `allocation`( `name`, `employeeid`, `department`,`assetid`) VALUES ('$name','$id','$department','$laptop')";
+  //echo $query;
+execute($query);
+execute($query2);
+
+
+
+}
 header("Location:../employee.php");
 
 
@@ -49,6 +65,7 @@ header("Location:../employee.php");
 {
   $assetid=$_POST["assetid"];
   $model=$_POST["model"];
+  $serial=$_POST["serial"];
   $dsn=$_POST["dsn"];
   $laptopusername=$_POST["laptopusername"];
   $maker=$_POST["maker"];
@@ -66,8 +83,8 @@ header("Location:../employee.php");
   $deleverydate=$_POST["deleverydate"];
   $procurementdate=$_POST["procurementdate"];
 
-  $query="INSERT INTO `laptop`(`assetid`, `model`, `dsn`, `laptopusername`, `maker`, `hostname`, `ip`, `domain`, `cpu`, `oskey`, `osversion`, `vendor`, `procrumentref`, `ram`, `hdd`, `warranty`, `deleverydate`, `procurementdate`) VALUES ('$assetid','$model','$dsn','$laptopusername','$maker','$hostname','$ip','$domain','$cpu','$oskey','$osversion','$vendor','$procrumentref','$ram','$hdd','$warranty','$deleverydate','$procurementdate')";
-  echo $query;
+  $query="INSERT INTO `laptop`(`assetid`, `model`, `dsn`, `laptopusername`, `maker`, `hostname`, `ip`, `domain`, `cpu`, `oskey`, `osversion`, `vendor`, `procrumentref`, `ram`, `hdd`, `warranty`, `deleverydate`, `procurementdate`,`status`,`Customization`,`serial`) VALUES ('$assetid','$model','$dsn','$laptopusername','$maker','$hostname','$ip','$domain','$cpu','$oskey','$osversion','$vendor','$procrumentref','$ram','$hdd','$warranty','$deleverydate','$procurementdate','Free','no','$serial')";
+  //echo $query;
 execute($query);
 header("Location:../laptop.php");
 

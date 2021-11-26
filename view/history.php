@@ -5,6 +5,10 @@
 $history="active";
 
 include('header.php');
+
+
+require_once ('Controllers/inventorycontroller.php');
+$info=history();
 ?>
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -39,40 +43,26 @@ include('header.php');
     <tr>
       <th scope="col">SN</th>
       <th scope="col">Employee Name</th>
+      <th scope="col">Employee ID</th>
       <th scope="col">Department</th>
-      <th scope="col">Laptop Model</th>
-      <th scope="col">Serial Number</th>
       <th scope="col">Laptop ID</th>
-      <th scope="col">Bag</th>
-      <th scope="col">Mouse</th>
-      <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Saif</td>
-      <td>777</td>
-      <td>IT</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Saif</td>
-      <td>777</td>
-      <td>IT</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Saif</td>
-      <td>777</td>
-      <td>IT</td>
-    </tr>
-    <tr>
-      <th scope="row">4</th>
-      <td>Saif</td>
-      <td>777</td>
-      <td>IT</td>
-    </tr>
+  <?php
+                  foreach($info as $infos)
+                  {
+                    echo "<tr>";
+                     
+                        echo "<td>".$infos["sl"]."</td>";
+						 echo "<td>".$infos["name"]."</td>";
+             echo "<td>".$infos["employeeid"]."</td>";
+						  echo "<td>".$infos["department"]."</td>";
+              echo "<td>".$infos["assetid"]."</td>";
+					    						 
+                                echo "</tr>";
+                  }
+                ?>
   </tbody>
 </table>
 	  

@@ -42,10 +42,10 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="./index.html" class="nav-link">Home</a>
+        <a href="./index.php" class="nav-link">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="pages/contact.php" class="nav-link">Contact</a>
+        <a href="https://www.ipdcbd.com/" class="nav-link">Official Website</a>
       </li>
     </ul>
 
@@ -59,7 +59,7 @@
         <div class="navbar-search-block">
           <form class="form-inline">
             <div class="input-group input-group-sm">
-              <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+              <input class="form-control form-control-navbar" id="myInput" onkeyup="myFunction()" type="search" placeholder="Search" aria-label="Search">
               <div class="input-group-append">
                 <button class="btn btn-navbar" type="submit">
                   <i class="fas fa-search"></i>
@@ -92,7 +92,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index.html" class="brand-link">
+    <a href="index.php" class="brand-link">
       <img src="dist/img/IPDC.png" alt="IPDC Logo" class="brand-image">
       <span class="brand-text font-weight-light">IPDC Finance</span>
     </a>
@@ -103,7 +103,7 @@
       <!-- SidebarSearch Form -->
       <div class="form-inline">
         <div class="input-group" data-widget="sidebar-search">
-          <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+          <input class="form-control form-control-sidebar"  type="text" placeholder="Search" aria-label="Search">
           <div class="input-group-append">
             <button class="btn btn-sidebar">
               <i class="fas fa-search fa-fw"></i>
@@ -161,31 +161,7 @@
               </p>
             </a>
           </li>
-          <li class="nav-item">
-            <a href="vendor.php" class="nav-link <?php echo $vendor ?>">
-              <i class="nav-icon far fa-calendar-alt"></i>
-              <p>
-                Sent to Vendor
-                
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="history.php" class="nav-link <?php echo $history ?>">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                User History
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="warranty.php" class="nav-link <?php echo $warranty ?>">
-              <i class="nav-icon fas fa-columns"></i>
-              <p>
-                Warranty Aviability
-              </p>
-            </a>
-          </li>
+          
          
           <li class="nav-item">
             <a href="faulty.php" class="nav-link <?php echo $faulty ?>">
@@ -211,8 +187,19 @@
               </p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="history.php" class="nav-link <?php echo $history ?>">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                User History
+              </p>
+            </a>
+          </li>
+
       </nav>
       <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->
   </aside>
+
+  

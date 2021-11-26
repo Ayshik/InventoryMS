@@ -19,21 +19,21 @@ include('header.php');
   Add a New Laptop
 </button>
 
-<button  type="button" class="btn btn-success" data-toggle="modal" >
-<a herf="" i class="fa fa-search" style="color:white"></a>
+<!-- <button  type="button" class="btn btn-success" data-toggle="modal" >
+<a herf="" i class="fa fa-filter" style="color:white"></a>
 </button>
-<button type="button" class="btn btn-info" data-toggle="modal" >
+<button onclick="alocated()" class="btn btn-info"  >
   Alocated
 </button>
-<button type="button" class="btn btn-info" data-toggle="modal">
+<button type="button" class="btn btn-info">
   Inventory
 </button>
-<button type="button" class="btn btn-info" data-toggle="modal">
+<button type="button" class="btn btn-info">
   Faulty
 </button>
-<button type="button" class="btn btn-info" data-toggle="modal">
+<button type="button" class="btn btn-info">
   Customized
-</button>
+</button> -->
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -59,6 +59,10 @@ include('header.php');
     <input type="id" class="form-control" name="model" placeholder="Enter Model" id="model">
   </div>
   <div class="form-group">
+    <label for="id">Serial Number:</label>
+    <input type="id" class="form-control" name="serial" placeholder="Enter Model" id="serial">
+  </div>  
+  <div class="form-group">
     <label for="designation">DSN:</label>
     <input type="designation" class="form-control" name="dsn" placeholder="Enter DSN" id="dsn">
   </div>
@@ -69,10 +73,6 @@ include('header.php');
   <div class="form-group">
     <label for="text">Maker:</label>
     <input type="text" class="form-control" name="maker" placeholder="Enter Laptop Maker" id="maker">
-  </div>
-  <div class="form-group">
-    <label for="text">Asset ID:</label>
-    <input type="text" class="form-control" name="assetid" placeholder="Enter Asset ID" id="assetid">
   </div>
   <div class="form-group">
     <label for="text">Hostname:</label>
@@ -173,13 +173,21 @@ include('header.php');
     </div>
   </div>
 </div>
+</div>
+
+
+
+
+
+
+
 
 <!-- this is for update -->
 <div class="modal fade " id="updatepanel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Employee Update</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Laptop Update</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -188,43 +196,44 @@ include('header.php');
 
 
 
-<form action="Controllers/employeecontroller.php" method="post">
+<form action="Controllers/inventorycontroller.php" method="post">
   <div class="form-group">
-    <label for="name">Asset ID:</label>
-    <input type="name" class="form-control" id="uassetid" name="uassetid" placeholder="Enter Asset ID" required>
+    <label for="name">Asset ID</label>
+    <input type="name" class="form-control" id="uassetid" name="lassetid" placeholder="Enter Asset ID" required>
+    <input type="hidden" class="form-control" id="sl" name="sl" placeholder="Enter Asset ID" required>
   </div>
   <div class="form-group">
-    <label for="id">Laptop Username:</label>
-    <input type="id" class="form-control" name="uusername" placeholder="Enter Laptop Username" id="uusername" required>
+    <label for="id">Laptop Username</label>
+    <input type="id" class="form-control" name="lusername" placeholder="Enter Laptop Username" id="uusername" required>
   </div>
   <div class="form-group">
-    <label for="designation">DSN:</label>
-    <input type="designation" class="form-control" name="udsn" placeholder="Enter DSN" id="udsn" required>
+    <label for="designation">DSN</label>
+    <input type="designation" class="form-control" name="ldsn" placeholder="Enter DSN" id="udsn" required>
   </div>
   <div class="form-group">
-    <label for="designation">Host Name:</label>
-    <input type="designation" class="form-control" name="hostname" placeholder="Enter Host Name" id="uhostname" required>
+    <label for="designation">Host Name</label>
+    <input type="designation" class="form-control" name="lhostname" placeholder="Enter Host Name" id="uhostname" required>
   </div>
   <div class="form-group">
-    <label for="name">IP:</label>
-    <input type="name" class="form-control" id="uip" name="ip" placeholder="Enter IP" required>
+    <label for="name">IP</label>
+    <input type="name" class="form-control" id="uip" name="lip" placeholder="Enter IP" required>
   </div>
   <div class="form-group">
-    <label for="name">Domain:</label>
-    <input type="name" class="form-control" id="udomain" name="domain" placeholder="Enter Domain" required>
+    <label for="name">Domain</label>
+    <input type="name" class="form-control" id="udomain" name="ldomain" placeholder="Enter Domain" required>
   </div>
   <div class="form-group">
-    <label for="name">OS Key:</label>
-    <input type="name" class="form-control" id="uoskey" name="oskey" placeholder="Enter OS Key" required>
+    <label for="name">OS Key</label>
+    <input type="name" class="form-control" id="uoskey" name="loskey" placeholder="Enter OS Key" required>
   </div>
   <div class="form-group">
-    <label for="name">OS Version:</label>
-    <input type="name" class="form-control" id="uosversion" name="naosversionme" placeholder="Enter OS Version" required>
+    <label for="name">OS Version</label>
+    <input type="name" class="form-control" id="uosversion" name="losversion" placeholder="Enter OS Version" required>
   </div>
   <tr>
           <td>RAM:</td>
           <td>
-            <select name="ram" id="uram">
+            <select name="lram" id="uram">
               <option>4</option>
               <option>8</option>
               <option>12</option>
@@ -239,7 +248,7 @@ include('header.php');
         <tr>
           <td>HDD:</td>
           <td>
-            <select name="hdd" id="uhdd">
+            <select name="lhdd" id="uhdd">
               <option>HDD 120</option>
               <option>HDD 256</option>
               <option>HDD 512</option>
@@ -254,7 +263,7 @@ include('header.php');
         </tr>
   
   </select>
-  </div>
+ 
  
 
 
@@ -262,13 +271,14 @@ include('header.php');
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" name="" class="btn btn-primary">Update</button>
+        <button type="submit" name="laptopupdate" class="btn btn-primary">Update</button>
       </div>
       </form>
     </div>
   </div>
 </div>
 <!-- End update -->
+
 
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -286,7 +296,7 @@ include('header.php');
       <div class="container-fluid">
       
 	  
-	 <table class="table table-hover">
+	 <table id="mytable" class="table table-hover">
   <thead>
     <tr>
     <th scope="col">SN</th>
@@ -304,7 +314,8 @@ include('header.php');
       <th scope="col">CPU</th>
       <th scope="col">OS Key</th>
       <th scope="col">OS Version</th>
-      <th scope="col">Action</th>
+     
+      <th scope="col"></th>
     </tr>
   </thead>
   <tbody>
@@ -318,7 +329,7 @@ include('header.php');
 						  echo "<td>".$infos["model"]."</td>";
               echo "<td>".$infos["serial"]."</td>";
 						   echo "<td>".$infos["dsn"]."</td>";
-                      echo "<td>".$infos["laptopusername"]."</td>";
+              echo "<td>".$infos["laptopusername"]."</td>";
 					   echo "<td>".$infos["maker"]."</td>";
 					   echo "<td>".$infos["hostname"]."</td>";
 					    echo "<td>".$infos["ip"]."</td>";
@@ -327,7 +338,8 @@ include('header.php');
               echo "<td>".$infos["hdd"]."</td>";
 						echo "<td>".$infos["cpu"]."</td>";
 						 echo "<td>".$infos["oskey"]."</td>";
-						  echo "<td>".$infos["osversion"]."</td>";						 
+						  echo "<td>".$infos["osversion"]."</td>";
+             				 
             
 
               echo '<td><button class="btn btn-success editbutton" data-toggle="modal" name="editbutton" ><a  i class="fa fa-pen" style="color:white">  Edit</a></td>';
@@ -368,7 +380,7 @@ var data=$tr.children("td").map(function(){
 return $(this).text();
 }).get();
 console.log(data);
-
+$('#sl').val(data[0]);
 $('#uassetid').val(data[1]);
 $('#uusername').val(data[5]);
 $('#udsn').val(data[4]);
@@ -387,6 +399,28 @@ $('#uHDD').val(data[11]);
 
 
 });
+
+
+</script>
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("mytable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
 
 
 </script>
