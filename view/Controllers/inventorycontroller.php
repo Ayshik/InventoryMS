@@ -20,13 +20,14 @@ if(isset($_POST["update"]))
   $department=$_POST["department"];
   $laptop=$_POST["laptop"];
   $alaptop=$_POST["alaptop"];
+  $location=$_POST["elocation"];
   $prev=$_POST["ihh"];
  
-if($alaptop=='No' || $alaptop==$prev)
+if($laptop=='No' || $laptop==$prev)
 {
-  $query="UPDATE `employee` SET `name`='$name',`id`='$id',`department`='$department',`designation`='$designation',`laptop`='$alaptop' where sl='$sl'";
+  $query="UPDATE `employee` SET `name`='$name',`id`='$id',`location`='$location',`department`='$department',`designation`='$designation',`laptop`='$alaptop' where sl='$sl'";
  
-  echo $query;
+ // echo $query;
 execute($query);
 }
 else
@@ -35,7 +36,7 @@ else
 //echo "else kaj kore";
 
 
-$query="UPDATE `employee` SET `name`='$name',`id`='$id',`department`='$department',`designation`='$designation',`laptop`='$laptop' where sl='$sl'";
+$query="UPDATE `employee` SET `name`='$name',`id`='$id',`location`='$location',`department`='$department',`designation`='$designation',`laptop`='$laptop' where sl='$sl'";
   $query2="INSERT INTO `allocation`( `name`, `employeeid`, `department`,`assetid`) VALUES ('$name','$id','$department','$laptop')";
   $query3="UPDATE `laptop` SET `status`='Boocked' where assetid='$laptop'";
  
@@ -69,7 +70,7 @@ function laptopupdate()
 {
   $assetid=$_POST["lassetid"];
   $sl=$_POST["sl"];
-  $dsn=$_POST["ldsn"];
+ 
   $laptopusername=$_POST["lusername"];
   $hostname=$_POST["lhostname"];
   $ip=$_POST["lip"];
@@ -77,11 +78,49 @@ function laptopupdate()
   $oskey=$_POST["loskey"];
   $osversion=$_POST["losversion"];
   $ram=$_POST["lram"];
+  $ssd=$_POST["lssd"];
   $hdd=$_POST["lhdd"];
 
-  $query="UPDATE `laptop` SET `assetid`='$assetid',`dsn`='$dsn',`laptopusername`='$laptopusername',`hostname`='$hostname',`ip`='$ip',`domain`='$domain',`oskey`='$oskey',`osversion`='$osversion',`ram`='$ram',`hdd`='$hdd',`Customization`='yes' WHERE sl='$sl'";
+
+
+
+  $hassetid=$_POST["lassetid"];
+  $hlaptopusername=$_POST["husername"];
+  $hhostname=$_POST["hhostname"];
+  $hip=$_POST["hip"];
+  $hdomain=$_POST["hdomain"];
+  $hoskey=$_POST["hoskey"];
+  $hosversion=$_POST["hosversion"];
+  $hram=$_POST["hram"];
+  $hssd=$_POST["hssd"];
+  $hhdd=$_POST["hhdd"];
+if($hlaptopusername==$laptopusername  && $assetid==$hassetid && $hostname==$hhostname && $ip== $hip && $domain== $hdomain && $oskey== $hoskey && $osversion== $hosversion && $ram== $hram && $ssd== $hssd && $hdd== $hhdd)
+  {
+    
+    
+    $query="UPDATE `laptop` SET `assetid`='$assetid',`laptopusername`='$laptopusername',`hostname`='$hostname',`ip`='$ip',`ssd`='$ssd',`domain`='$domain',`oskey`='$oskey',`osversion`='$osversion',`ram`='$ram',`hdd`='$hdd' WHERE sl='$sl'";
   //echo $query;
+  echo "1st working";
 execute($query);
+
+}
+
+else if($hlaptopusername!=$laptopusername  && $assetid==$hassetid && $hostname==$hhostname && $ip== $hip && $domain== $hdomain && $oskey== $hoskey && $osversion== $hosversion && $ram== $hram && $ssd== $hssd && $hdd== $hhdd)
+{
+  $query="UPDATE `laptop` SET `assetid`='$assetid',`laptopusername`='$laptopusername',`hostname`='$hostname',`ip`='$ip',`ssd`='$ssd',`domain`='$domain',`oskey`='$oskey',`osversion`='$osversion',`ram`='$ram',`hdd`='$hdd' WHERE sl='$sl'";
+  //echo $query;
+ // echo "n loop working";
+execute($query);
+}
+else{
+
+  $query2="UPDATE `laptop` SET `assetid`='$assetid',`laptopusername`='$laptopusername',`hostname`='$hostname',`ip`='$ip',`ssd`='$ssd',`domain`='$domain',`oskey`='$oskey',`osversion`='$osversion',`ram`='$ram',`hdd`='$hdd',`Customization`='yes' WHERE sl='$sl'";
+ // echo "else working";
+execute($query2);
+
+}
+
+
 header("Location:../laptop.php");
 
 

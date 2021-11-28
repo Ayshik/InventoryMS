@@ -37,7 +37,7 @@ $info=customizeinfo();
       <th scope="col">SN</th>
       <th scope="col">Laptop ID</th>
       <th scope="col">Laptop Username</th>
-      <th scope="col">DSN</th>
+      
       <th scope="col">Host Name</th>
       <th scope="col">IP</th>
       <th scope="col">Domain</th>
@@ -45,6 +45,7 @@ $info=customizeinfo();
       <th scope="col">OS Version</th>
       <th scope="col">RAM</th>
       <th scope="col">HDD</th>
+      <th scope="col">SSD</th>
       
       
     </tr>
@@ -58,7 +59,7 @@ $info=customizeinfo();
                         echo "<td>".$infos["sl"]."</td>";
 						 echo "<td>".$infos["assetid"]."</td>";
              echo "<td>".$infos["laptopusername"]."</td>";
-             echo "<td>".$infos["dsn"]."</td>";
+             
 					   echo "<td>".$infos["hostname"]."</td>";
 					    echo "<td>".$infos["ip"]."</td>";
               echo "<td>".$infos["domain"]."</td>";
@@ -66,6 +67,7 @@ $info=customizeinfo();
 						  echo "<td>".$infos["osversion"]."</td>";
               echo "<td>".$infos["ram"]."</td>";
               echo "<td>".$infos["hdd"]."</td>";
+              echo "<td>".$infos["ssd"]."</td>";
              
               					 
             

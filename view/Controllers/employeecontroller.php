@@ -19,10 +19,10 @@ if(isset($_POST["insertlaptop"]))
   $designation=$_POST["designation"];
   $department=$_POST["department"];
   $location=$_POST["location"];
-  $laptop=$_POST["laptop"];
+  $laptop=$_POST["elaptop"];
   $mouse=$_POST["mouse"];
     $bag=$_POST["bag"];
-if($laptop=='NULL')
+if($laptop=='No')
 {
   $query="INSERT INTO `employee`(`sl`, `name`, `id`, `department`, `designation`, `laptop`, `bag`, `mouse`,`location`) VALUES ('','$name','$id','$designation','$department','$laptop','$mouse','$bag','$location')";
   
@@ -69,7 +69,7 @@ header("Location:../employee.php");
   $assetid=$_POST["assetid"];
   $model=$_POST["model"];
   $serial=$_POST["serial"];
-  $dsn=$_POST["dsn"];
+ 
   $laptopusername=$_POST["laptopusername"];
   $maker=$_POST["maker"];
   $hostname=$_POST["hostname"];
@@ -82,11 +82,12 @@ header("Location:../employee.php");
   $procrumentref=$_POST["procrumentref"];
   $ram=$_POST["ram"];
   $hdd=$_POST["hdd"];
+  $ssd=$_POST["ssd"];
   $warranty=$_POST["warranty"];
   $deleverydate=$_POST["deleverydate"];
   $procurementdate=$_POST["procurementdate"];
 
-  $query="INSERT INTO `laptop`(`assetid`, `model`, `dsn`, `laptopusername`, `maker`, `hostname`, `ip`, `domain`, `cpu`, `oskey`, `osversion`, `vendor`, `procrumentref`, `ram`, `hdd`, `warranty`, `deleverydate`, `procurementdate`,`status`,`Customization`,`serial`) VALUES ('$assetid','$model','$dsn','$laptopusername','$maker','$hostname','$ip','$domain','$cpu','$oskey','$osversion','$vendor','$procrumentref','$ram','$hdd','$warranty','$deleverydate','$procurementdate','Free','no','$serial')";
+  $query="INSERT INTO `laptop`(`assetid`, `model`, `laptopusername`, `maker`, `hostname`, `ip`, `domain`, `cpu`, `oskey`, `osversion`, `vendor`, `procrumentref`, `ram`, `hdd`, `warranty`, `deleverydate`, `procurementdate`,`status`,`Customization`,`serial`,`ssd`) VALUES ('$assetid','$model','$laptopusername','$maker','$hostname','$ip','$domain','$cpu','$oskey','$osversion','$vendor','$procrumentref','$ram','$hdd','$warranty','$deleverydate','$procurementdate','Free','no','$serial','$ssd')";
   //echo $query;
 execute($query);
 header("Location:../laptop.php");

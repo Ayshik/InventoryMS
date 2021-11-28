@@ -166,7 +166,7 @@ include('header.php');
   <input type="hidden" class="form-control" placeholder="Enter Department" name="ihh" id="ihh" value="" required>
   <div class="form-group">
   <label for="department">Laptop ID:</label>
-  <select  class="form-control" name="elaptop">
+  <select   class="form-control" name="laptop">
  
   <option value="No">Null</option>
   <?php while($row1=mysqli_fetch_array($result1));?>
@@ -227,7 +227,7 @@ include('header.php');
       <div class="container-fluid">
 
 
-	 <table class="table table-hover">
+	 <table id="mytable" class="table table-hover">
   <thead>
     <tr>
       <th scope="col">SN</th>
@@ -313,4 +313,26 @@ $('#ihh').val(data[5]);
 });
 
 
+</script>
+
+
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("mytable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
 </script>

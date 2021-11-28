@@ -40,7 +40,7 @@ $info=invoiceinfo();
       <th scope="col">Vendor</th>
       <th scope="col">Purchase Date</th>
       <th scope="col">Procurement Reference</th>
-      <th scope="col">Delevery Date</th>
+      <th scope="col"> Delevery Date</th>
       <th scope="col">Warranty Year</th>
     
     </tr>
@@ -54,9 +54,10 @@ $info=invoiceinfo();
                         echo "<td>".$infos["sl"]."</td>";
 						 echo "<td>".$infos["assetid"]."</td>";
 						  echo "<td>".$infos["vendor"]."</td>";
-              echo "<td>".$infos["procurementdate"]."</td>";
-						   echo "<td>".$infos["procrumentref"]."</td>";
               echo "<td>".$infos["deleverydate"]."</td>";
+						   echo "<td>".$infos["procrumentref"]."</td>";
+              
+              echo "<td>".$infos["procurementdate"]."</td>";
 					   echo "<td>".$infos["warranty"]."</td>";
 					    						 
             

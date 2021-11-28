@@ -19,10 +19,8 @@ include('header.php');
   Add a New Laptop
 </button>
 
-<!-- <button  type="button" class="btn btn-success" data-toggle="modal" >
-<a herf="" i class="fa fa-filter" style="color:white"></a>
-</button>
-<button onclick="alocated()" class="btn btn-info"  >
+<a href="Controllers/export.php"><button type="button" class="btn btn-primary">Export</button></a>
+<!-- <button onclick="alocated()" class="btn btn-info"  >
   Alocated
 </button>
 <button type="button" class="btn btn-info">
@@ -62,10 +60,7 @@ include('header.php');
     <label for="id">Serial Number:</label>
     <input type="id" class="form-control" name="serial" placeholder="Enter Serial Number" id="serial">
   </div>  
-  <div class="form-group">
-    <label for="designation">DNS:</label>
-    <input type="designation" class="form-control" name="dsn" placeholder="Enter DSN" id="dsn">
-  </div>
+  
   <div class="form-group">
     <label for="department">Laptop Username:</label>
     <input type="department" class="form-control" name="laptopusername" placeholder="Enter Username" id="laptopusername">
@@ -212,35 +207,40 @@ include('header.php');
   <div class="form-group">
     <label for="id">Laptop Username</label>
     <input type="id" class="form-control" name="lusername" placeholder="Enter Laptop Username" id="uusername" required>
+    <input type="hidden" class="form-control" id="husername" name="husername" placeholder="Enter Laptop Username" required>
   </div>
-  <div class="form-group">
-    <label for="designation">DSN</label>
-    <input type="designation" class="form-control" name="ldsn" placeholder="Enter DSN" id="udsn" required>
-  </div>
+  
   <div class="form-group">
     <label for="designation">Host Name</label>
     <input type="designation" class="form-control" name="lhostname" placeholder="Enter Host Name" id="uhostname" required>
+    <input type="hidden" class="form-control" id="hhostname" name="hhostname" placeholder="" required>
   </div>
   <div class="form-group">
     <label for="name">IP</label>
     <input type="name" class="form-control" id="uip" name="lip" placeholder="Enter IP" required>
+    <input type="hidden" class="form-control" id="hip" name="hip" placeholder="" required>
   </div>
   <div class="form-group">
     <label for="name">Domain</label>
     <input type="name" class="form-control" id="udomain" name="ldomain" placeholder="Enter Domain" required>
+    <input type="hidden" class="form-control" id="hdomain" name="hdomain" placeholder="" required>
   </div>
   <div class="form-group">
     <label for="name">OS Key</label>
     <input type="name" class="form-control" id="uoskey" name="loskey" placeholder="Enter OS Key" required>
+    <input type="hidden" class="form-control" id="hoskey" name="hoskey" placeholder="" required>
   </div>
   <div class="form-group">
     <label for="name">OS Version</label>
     <input type="name" class="form-control" id="uosversion" name="losversion" placeholder="Enter OS Version" required>
+    <input type="hidden" class="form-control" id="hosversion" name="hosversion" placeholder="" required>
   </div>
+  <input type="hidden" class="form-control" id="hram" name="hram" placeholder="" required>
   <tr>
           <td>RAM:</td>
           <td>
             <select name="lram" id="uram">
+           
               <option>4</option>
               <option>8</option>
               <option>12</option>
@@ -252,10 +252,12 @@ include('header.php');
             </select>
           </td>
         </tr>
+        <input type="hidden" class="form-control" id="hhdd" name="hhdd" placeholder="" required>
         <tr>
           <td>HDD:</td>
           <td>
             <select name="lhdd" id="uhdd">
+           
               <option>HDD 128</option>
               <option>HDD 256</option>
               <option>HDD 512</option>
@@ -264,10 +266,12 @@ include('header.php');
             </select>
           </td>
         </tr>
+        <input type="hidden" class="form-control" id="hssd" name="hssd" placeholder="" required>
         <tr>
           <td>SSD:</td>
           <td>
             <select name="lssd" id="ussd">
+            
               <option>SSD 128</option>
               <option>SSD 256</option>
               <option>SSD 512</option>
@@ -314,7 +318,7 @@ include('header.php');
       <th scope="col">Laptop ID</th>
       <th scope="col">Model</th>
       <th scope="col">Serial</th>
-      <th scope="col">DSN</th>
+      
       <th scope="col">Laptop Username</th>
       <th scope="col">Maker</th>
       <th scope="col">Hostname</th>
@@ -340,7 +344,7 @@ include('header.php');
 						 echo "<td>".$infos["assetid"]."</td>";
 						  echo "<td>".$infos["model"]."</td>";
               echo "<td>".$infos["serial"]."</td>";
-						   echo "<td>".$infos["dsn"]."</td>";
+						   
               echo "<td>".$infos["laptopusername"]."</td>";
 					   echo "<td>".$infos["maker"]."</td>";
 					   echo "<td>".$infos["hostname"]."</td>";
@@ -395,16 +399,25 @@ return $(this).text();
 console.log(data);
 $('#sl').val(data[0]);
 $('#uassetid').val(data[1]);
-$('#uusername').val(data[5]);
-$('#udsn').val(data[4]);
-$('#uhostname').val(data[7]);
-$('#uip').val(data[8]);
-$('#udomain').val(data[9]);
+$('#hassetid').val(data[1]);
+$('#uusername').val(data[4]);
+$('#husername').val(data[4]);
+$('#uhostname').val(data[6]);
+$('#hhostname').val(data[6]);
+$('#uip').val(data[7]);
+$('#hip').val(data[7]);
+$('#udomain').val(data[8]);
+$('#hdomain').val(data[8]);
 $('#uoskey').val(data[13]);
+$('#hoskey').val(data[13]);
 $('#uosversion').val(data[14]);
-$('#uram').val(data[10]);
-$('#uHDD').val(data[11]);
-$('#uSSD').val(data[12]);
+$('#hosversion').val(data[14]);
+$('#uram').val(data[9]);
+$('#hram').val(data[9]);
+$('#uhdd').val(data[10]);
+$('#hhdd').val(data[10]);
+$('#ussd').val(data[11]);
+$('#hssd').val(data[11]);
 });
 
 
