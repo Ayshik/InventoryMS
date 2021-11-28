@@ -235,8 +235,8 @@ include('header.php');
       <th scope="col">Employee ID</th>
       <th scope="col">Department</th>
       <th scope="col">Designation</th>
-      <th scope="col">Location</th>
       <th scope="col">Laptop ID</th>
+      <th scope="col">Location</th>
       <th scope="col">Bag</th>
       <th scope="col">Mouse</th>
       <th scope="col"></th>
@@ -254,8 +254,8 @@ include('header.php');
                         echo "<td>".$infos["id"]."</td>";
                         echo "<td>".$infos["department"]."</td>";
                         echo "<td>".$infos["designation"]."</td>";
-                        echo "<td>".$infos["location"]."</td>";
                         echo "<td>".$infos["laptop"]."</td>";
+                        echo "<td>".$infos["location"]."</td>";
                         echo "<td>".$infos["bag"]."</td>";
                         echo "<td>".$infos["mouse"]."</td>";
             
@@ -300,7 +300,7 @@ $('#ename').val(data[1]);
 $('#eid').val(data[2]);
 $('#edesignation').val(data[3]);
 $('#edepartment').val(data[4]);
-$('#elocation').val(data[4]);
+$('#elocation').val(data[6]);
 $('#elaptop').val(data[5]);
 $('#ihh').val(data[5]);
 });
