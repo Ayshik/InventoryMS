@@ -37,9 +37,11 @@ else
   $query="INSERT INTO `employee`(`sl`, `name`, `id`, `department`, `designation`, `laptop`, `bag`, `mouse`) VALUES ('','$name','$id','$designation','$department','$laptop','$mouse','$bag')";
   $query2="INSERT INTO `allocation`( `name`, `employeeid`, `department`,`assetid`) VALUES ('$name','$id','$department','$laptop')";
   //echo $query;
+ 
+  $query3="UPDATE `laptop` SET `status`='Boocked' where assetid='$laptop'";
 execute($query);
 execute($query2);
-
+execute($query3);
 
 
 }

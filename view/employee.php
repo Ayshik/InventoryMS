@@ -77,7 +77,12 @@ include('header.php');
     <input type="department" class="form-control" placeholder="Enter Department" name="department" required>
   </div>
   <div class="form-group">
-  <select name="laptop">
+    <label for="department">Location:</label>
+    <input type="location" class="form-control" placeholder="Enter Location" name="location" required>
+  </div>
+  <div class="form-group">
+  <label for="department">Laptop ID:</label>
+  <select  class="form-control" name="laptop">
   <option value="No">Null</option>
   <?php while($row1=mysqli_fetch_array($result1));?>
     <?php echo $options;?>
@@ -149,10 +154,20 @@ include('header.php');
     <label for="department">Department:</label>
     <input type="department" class="form-control" placeholder="Enter Department" name="department" id="edepartment" required>
   </div>
+  <div class="form-group">
+    <label for="department">Location:</label>
+    <input type="location" class="form-control" placeholder="Enter Location" name="location" id="elocation" required>
+  </div>
+
+  <div class="form-group">
+    <label for="designation">Assigned Laptop:</label>
+    <input type="designation" class="form-control" name="alaptop" placeholder="Enter Designation" id="elaptop" readonly>
+  </div>
   <input type="hidden" class="form-control" placeholder="Enter Department" name="ihh" id="ihh" value="" required>
   <div class="form-group">
   <label for="department">Laptop ID:</label>
-  <select class="form-control"  id="elaptop" name="laptop">
+  <select  class="form-control" name="laptop">
+ 
   <option value="No">Null</option>
   <?php while($row1=mysqli_fetch_array($result1));?>
     <?php echo $options;?>
@@ -220,7 +235,7 @@ include('header.php');
       <th scope="col">Employee ID</th>
       <th scope="col">Department</th>
       <th scope="col">Designation</th>
-
+      <th scope="col">Location</th>
       <th scope="col">Laptop ID</th>
       <th scope="col">Bag</th>
       <th scope="col">Mouse</th>
@@ -235,14 +250,14 @@ include('header.php');
                     echo "<tr>";
                      
                         echo "<td>".$infos["sl"]."</td>";
-						 echo "<td>".$infos["name"]."</td>";
-						  echo "<td>".$infos["id"]."</td>";
-						   echo "<td>".$infos["department"]."</td>";
-                      echo "<td>".$infos["designation"]."</td>";
-					   echo "<td>".$infos["laptop"]."</td>";
-					  
-					   echo "<td>".$infos["bag"]."</td>";
-					    echo "<td>".$infos["mouse"]."</td>";
+						            echo "<td>".$infos["name"]."</td>";
+                        echo "<td>".$infos["id"]."</td>";
+                        echo "<td>".$infos["department"]."</td>";
+                        echo "<td>".$infos["designation"]."</td>";
+                        echo "<td>".$infos["location"]."</td>";
+                        echo "<td>".$infos["laptop"]."</td>";
+                        echo "<td>".$infos["bag"]."</td>";
+                        echo "<td>".$infos["mouse"]."</td>";
             
  echo '<td><button class="btn btn-success editbutton" data-toggle="modal" name="editbutton"  ><a  i class="fa fa-pen" style="color:white">  Edit</a></td>';
             echo '<td><button class="btn btn-danger"><a href="Controllers/Deleteemployee.php?id='.$infos["sl"].'&amp;eid='.$infos["id"].'&amp;dep='.$infos["department"].'&amp;des='.$infos["designation"].'&amp;essetid='.$infos["laptop"].'&amp;name='.$infos["name"].'" i class="fa fa-trash" style="color:white">  Release</a></td>';
@@ -285,6 +300,7 @@ $('#ename').val(data[1]);
 $('#eid').val(data[2]);
 $('#edesignation').val(data[3]);
 $('#edepartment').val(data[4]);
+$('#elocation').val(data[4]);
 $('#elaptop').val(data[5]);
 $('#ihh').val(data[5]);
 });

@@ -51,8 +51,8 @@ include('header.php');
 
 <form action="Controllers/employeecontroller.php" method="post">
   <div class="form-group">
-    <label for="name">Asset Id:</label>
-    <input type="name" class="form-control"name="assetid" placeholder="Enter Name" id="assetid">
+    <label for="name">Laptop ID:</label>
+    <input type="name" class="form-control"name="assetid" placeholder="Enter Laptop ID" id="assetid">
   </div>
   <div class="form-group">
     <label for="id">Model:</label>
@@ -60,10 +60,10 @@ include('header.php');
   </div>
   <div class="form-group">
     <label for="id">Serial Number:</label>
-    <input type="id" class="form-control" name="serial" placeholder="Enter Model" id="serial">
+    <input type="id" class="form-control" name="serial" placeholder="Enter Serial Number" id="serial">
   </div>  
   <div class="form-group">
-    <label for="designation">DSN:</label>
+    <label for="designation">DNS:</label>
     <input type="designation" class="form-control" name="dsn" placeholder="Enter DSN" id="dsn">
   </div>
   <div class="form-group">
@@ -125,15 +125,22 @@ include('header.php');
           <td>HDD:</td>
           <td>
             <select name="hdd">
-              <option>HDD 120</option>
+              <option>HDD 128</option>
               <option>HDD 256</option>
               <option>HDD 512</option>
               <option>HDD 1024</option>
+
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>SSD:</td>
+          <td>
+            <select name="ssd">
               <option>SSD 128</option>
               <option>SSD 256</option>
               <option>SSD 512</option>
               <option>SSD 1024</option>
-
             </select>
           </td>
         </tr>
@@ -158,7 +165,7 @@ include('header.php');
 
         <br></br>
 
-        <label for="procurement date">Procurement Date:</label>
+        <label for="procurement date">Delevery Date:</label>
         <input type="date" id="procurement date" name="procurementdate">
  
 
@@ -198,7 +205,7 @@ include('header.php');
 
 <form action="Controllers/inventorycontroller.php" method="post">
   <div class="form-group">
-    <label for="name">Asset ID</label>
+    <label for="name">Laptop ID</label>
     <input type="name" class="form-control" id="uassetid" name="lassetid" placeholder="Enter Asset ID" required>
     <input type="hidden" class="form-control" id="sl" name="sl" placeholder="Enter Asset ID" required>
   </div>
@@ -249,10 +256,18 @@ include('header.php');
           <td>HDD:</td>
           <td>
             <select name="lhdd" id="uhdd">
-              <option>HDD 120</option>
+              <option>HDD 128</option>
               <option>HDD 256</option>
               <option>HDD 512</option>
               <option>HDD 1024</option>
+
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>SSD:</td>
+          <td>
+            <select name="lssd" id="ussd">
               <option>SSD 128</option>
               <option>SSD 256</option>
               <option>SSD 512</option>
@@ -263,10 +278,6 @@ include('header.php');
         </tr>
   
   </select>
- 
- 
-
-
 
       </div>
       <div class="modal-footer">
@@ -300,7 +311,7 @@ include('header.php');
   <thead>
     <tr>
     <th scope="col">SN</th>
-      <th scope="col">Asset ID</th>
+      <th scope="col">Laptop ID</th>
       <th scope="col">Model</th>
       <th scope="col">Serial</th>
       <th scope="col">DSN</th>
@@ -311,6 +322,7 @@ include('header.php');
       <th scope="col">Domain</th>
       <th scope="col">RAM</th>
       <th scope="col">HDD</th>
+      <th scope="col">SSD</th>
       <th scope="col">CPU</th>
       <th scope="col">OS Key</th>
       <th scope="col">OS Version</th>
@@ -336,6 +348,7 @@ include('header.php');
               echo "<td>".$infos["domain"]."</td>";
               echo "<td>".$infos["ram"]."</td>";
               echo "<td>".$infos["hdd"]."</td>";
+              echo "<td>".$infos["ssd"]."</td>";
 						echo "<td>".$infos["cpu"]."</td>";
 						 echo "<td>".$infos["oskey"]."</td>";
 						  echo "<td>".$infos["osversion"]."</td>";
@@ -391,6 +404,7 @@ $('#uoskey').val(data[13]);
 $('#uosversion').val(data[14]);
 $('#uram').val(data[10]);
 $('#uHDD').val(data[11]);
+$('#uSSD').val(data[12]);
 });
 
 
@@ -399,9 +413,9 @@ $('#uHDD').val(data[11]);
 
 
 });
-
 
 </script>
+
 <script>
 function myFunction() {
   var input, filter, table, tr, td, i, txtValue;
@@ -421,6 +435,4 @@ function myFunction() {
     }
   }
 }
-
-
 </script>

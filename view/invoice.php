@@ -32,13 +32,13 @@ $info=invoiceinfo();
       <div class="container-fluid">
       
 	  
-	 <table class="table table-hover">
+	 <table id="mytable" class="table table-hover">
   <thead>
     <tr>
       <th scope="col">SN</th>
-      <th scope="col">Asset ID</th>
+      <th scope="col">Laptop ID</th>
       <th scope="col">Vendor</th>
-      <th scope="col">Procurement Date</th>
+      <th scope="col">Purchase Date</th>
       <th scope="col">Procurement Reference</th>
       <th scope="col">Delevery Date</th>
       <th scope="col">Warranty Year</th>
@@ -82,3 +82,24 @@ $info=invoiceinfo();
 
 include('footer.php');
 ?>
+
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("mytable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+</script>

@@ -19,11 +19,12 @@ if(isset($_POST["update"]))
   $designation=$_POST["designation"];
   $department=$_POST["department"];
   $laptop=$_POST["laptop"];
+  $alaptop=$_POST["alaptop"];
   $prev=$_POST["ihh"];
  
-if($laptop=='No' || $laptop==$prev)
+if($alaptop=='No' || $alaptop==$prev)
 {
-  $query="UPDATE `employee` SET `name`='$name',`id`='$id',`department`='$department',`designation`='$designation',`laptop`='$laptop' where sl='$sl'";
+  $query="UPDATE `employee` SET `name`='$name',`id`='$id',`department`='$department',`designation`='$designation',`laptop`='$alaptop' where sl='$sl'";
  
   echo $query;
 execute($query);

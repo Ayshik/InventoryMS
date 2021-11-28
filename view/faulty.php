@@ -14,10 +14,7 @@ include('header.php');
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-          
-
-          Modal Button
-
+          <h1 class="m-0">Faulty Laptops</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -35,7 +32,7 @@ include('header.php');
       <div class="container-fluid">
       
 	  
-	 <table class="table table-hover">
+	 <table id="mytable" class="table table-hover">
   <thead>
     <tr>
     <th scope="col">SN</th>
@@ -43,7 +40,7 @@ include('header.php');
       <th scope="col">Serial Number</th>
       <th scope="col">Laptop ID</th>
       <th scope="col">Vendor</th>
-      <th scope="col">Action</th>
+      <th scope="col"></th>
     </tr>
   </thead>
   <tbody>
@@ -81,3 +78,24 @@ include('header.php');
 
 include('footer.php');
 ?>
+
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("mytable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+</script>
