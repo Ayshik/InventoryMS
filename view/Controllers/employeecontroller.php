@@ -18,12 +18,13 @@ if(isset($_POST["insertlaptop"]))
   $id=$_POST["id"];
   $designation=$_POST["designation"];
   $department=$_POST["department"];
+  $location=$_POST["location"];
   $laptop=$_POST["laptop"];
   $mouse=$_POST["mouse"];
     $bag=$_POST["bag"];
 if($laptop=='NULL')
 {
-  $query="INSERT INTO `employee`(`sl`, `name`, `id`, `department`, `designation`, `laptop`, `bag`, `mouse`) VALUES ('','$name','$id','$designation','$department','$laptop','$mouse','$bag')";
+  $query="INSERT INTO `employee`(`sl`, `name`, `id`, `department`, `designation`, `laptop`, `bag`, `mouse`,`location`) VALUES ('','$name','$id','$designation','$department','$laptop','$mouse','$bag','$location')";
   
   //echo $query;
 execute($query);
@@ -34,7 +35,7 @@ else
 
 
 
-  $query="INSERT INTO `employee`(`sl`, `name`, `id`, `department`, `designation`, `laptop`, `bag`, `mouse`) VALUES ('','$name','$id','$designation','$department','$laptop','$mouse','$bag')";
+  $query="INSERT INTO `employee`(`sl`, `name`, `id`, `department`, `designation`, `laptop`, `bag`, `mouse`,`location`) VALUES ('','$name','$id','$designation','$department','$laptop','$mouse','$bag','$location')";
   $query2="INSERT INTO `allocation`( `name`, `employeeid`, `department`,`assetid`) VALUES ('$name','$id','$department','$laptop')";
   //echo $query;
  

@@ -156,17 +156,17 @@ include('header.php');
   </div>
   <div class="form-group">
     <label for="department">Location:</label>
-    <input type="location" class="form-control" placeholder="Enter Location" name="location" id="elocation" required>
+    <input type="location" class="form-control" placeholder="Enter Location" name="elocation" id="elocation" required>
   </div>
 
   <div class="form-group">
     <label for="designation">Assigned Laptop:</label>
-    <input type="designation" class="form-control" name="alaptop" placeholder="Enter Designation" id="elaptop" readonly>
+    <input type="designation" class="form-control"  id="elaptop" name="alaptop" placeholder="Enter Designation"  readonly>
   </div>
   <input type="hidden" class="form-control" placeholder="Enter Department" name="ihh" id="ihh" value="" required>
   <div class="form-group">
   <label for="department">Laptop ID:</label>
-  <select  class="form-control" name="laptop">
+  <select  class="form-control" name="elaptop">
  
   <option value="No">Null</option>
   <?php while($row1=mysqli_fetch_array($result1));?>
