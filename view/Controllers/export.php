@@ -8,6 +8,6 @@ while($row=mysqli_fetch_assoc($res)){
 }
 $html.='</table>';
 header('Content-Type:application/xls');
-header('Content-Disposition:attachment;filename=Laptop List.xls');
+header('Content-Disposition:attachment;filename=IPDC Laptop Report.xls');
 echo $html;
 ?>
