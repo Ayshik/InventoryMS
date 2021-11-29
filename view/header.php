@@ -139,7 +139,7 @@
           </li>
           <li class="nav-item">
             <a href="laptop.php" class="nav-link <?php echo $laptop ?>">
-              <i class="nav-icon fas fa-chart-pie"></i>
+              <i class="nav-icon fas fa-laptop"></i>
               <p>
                 Laptop List
               </p>
