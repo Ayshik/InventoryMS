@@ -19,7 +19,7 @@ if(isset($_POST["insertlaptop"]))
   $designation=$_POST["designation"];
   $department=$_POST["department"];
   $location=$_POST["location"];
-  $laptop=$_POST["elaptop"];
+  $laptop=$_POST["laptop"];
   $mouse=$_POST["mouse"];
     $bag=$_POST["bag"];
 if($laptop=='No')

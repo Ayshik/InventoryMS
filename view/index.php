@@ -133,7 +133,7 @@ if($query="SELECT count(sl) AS total FROM laptop where status='Boocked'"){
                 <p>Total Employees</p>
               </div>
               <div class="icon">
-                <i class="ion ion-stats-bars"></i>
+                <i class="ion ion-person-add"></i>
               </div>
               <a href="employee.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
@@ -148,7 +148,7 @@ if($query="SELECT count(sl) AS total FROM laptop where status='Boocked'"){
                 <p>Total Laptops</p>
               </div>
               <div class="icon">
-                <i class="ion ion-person-add"></i>
+                <i class="ion ion-laptop"></i>
               </div>
               <a href="laptop.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
@@ -191,14 +191,14 @@ if($query="SELECT count(sl) AS total FROM laptop where status='Boocked'"){
           <!-- ./col -->
           <div class="col-lg-3 col-6">
             <!-- small box -->
-            <div class="small-box bg-warning">
+            <div class="small-box bg-danger">
               <div class="inner">
                 <h3><?php echo $cus ; ?></h3>
 
                 <p>Customized Laptops</p>
               </div>
               <div class="icon">
-                <i class="ion ion-person-add"></i>
+                <i class="ion ion-laptop"></i>
               </div>
               <a href="customize.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>

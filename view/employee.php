@@ -161,9 +161,9 @@ include('header.php');
 
   <div class="form-group">
     <label for="designation">Assigned Laptop:</label>
-    <input type="designation" class="form-control"  id="elaptop" name="alaptop" placeholder="Enter Designation"  readonly>
+    <input type="designation" class="form-control"  id="elaptop" name="alaptop" placeholder=""  readonly>
   </div>
-  <input type="hidden" class="form-control" placeholder="Enter Department" name="ihh" id="ihh" value="" required>
+  <input type="hidden" class="form-control" placeholder="" name="ihh" id="ihh" value="" required>
   <div class="form-group">
   <label for="department">Laptop ID:</label>
   <select   class="form-control" name="laptop">
@@ -252,8 +252,8 @@ include('header.php');
                         echo "<td>".$infos["sl"]."</td>";
 						            echo "<td>".$infos["name"]."</td>";
                         echo "<td>".$infos["id"]."</td>";
-                        echo "<td>".$infos["department"]."</td>";
                         echo "<td>".$infos["designation"]."</td>";
+                        echo "<td>".$infos["department"]."</td>";
                         echo "<td>".$infos["laptop"]."</td>";
                         echo "<td>".$infos["location"]."</td>";
                         echo "<td>".$infos["bag"]."</td>";
