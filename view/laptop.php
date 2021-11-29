@@ -50,56 +50,56 @@ include('header.php');
 <form action="Controllers/employeecontroller.php" method="post">
   <div class="form-group">
     <label for="name">Laptop ID:</label>
-    <input type="name" class="form-control"name="assetid" placeholder="Enter Laptop ID" id="assetid">
+    <input type="name" class="form-control"name="assetid" placeholder="Enter Laptop ID" id="assetid" required>
   </div>
   <div class="form-group">
     <label for="id">Model:</label>
-    <input type="id" class="form-control" name="model" placeholder="Enter Model" id="model">
+    <input type="id" class="form-control" name="model" placeholder="Enter Model" id="model" required>
   </div>
   <div class="form-group">
     <label for="id">Serial Number:</label>
-    <input type="id" class="form-control" name="serial" placeholder="Enter Serial Number" id="serial">
+    <input type="id" class="form-control" name="serial" placeholder="Enter Serial Number" id="serial" required>
   </div>  
   
   <div class="form-group">
     <label for="department">Laptop Username:</label>
-    <input type="department" class="form-control" name="laptopusername" placeholder="Enter Username" id="laptopusername">
+    <input type="department" class="form-control" name="laptopusername" placeholder="Enter Username" id="laptopusername" required>
   </div>
   <div class="form-group">
     <label for="text">Maker:</label>
-    <input type="text" class="form-control" name="maker" placeholder="Enter Laptop Maker" id="maker">
+    <input type="text" class="form-control" name="maker" placeholder="Enter Laptop Maker" id="maker" required>
   </div>
   <div class="form-group">
     <label for="text">Hostname:</label>
-    <input type="text" class="form-control" name="hostname" placeholder="Enter Hostname" id="hostname">
+    <input type="text" class="form-control" name="hostname" placeholder="Enter Hostname" id="hostname" required>
   </div>
   <div class="form-group">
     <label for="text">IP:</label>
-    <input type="text" class="form-control" name="ip" placeholder="Enter IP" id="ip">
+    <input type="text" class="form-control" name="ip" placeholder="Enter IP" id="ip" required>
   </div>
   <div class="form-group">
     <label for="text">Domain:</label>
-    <input type="text" class="form-control" name="domain" placeholder="Enter Domain" id="domain">
+    <input type="text" class="form-control" name="domain" placeholder="Enter Domain" id="domain" required>
   </div>
   <div class="form-group">
     <label for="text">CPU:</label>
-    <input type="text" class="form-control" name="cpu" placeholder="Enter Laptop CPU" id="cpu">
+    <input type="text" class="form-control" name="cpu" placeholder="Enter Laptop CPU" id="cpu" required>
   </div>
   <div class="form-group">
     <label for="text">OS Key:</label>
-    <input type="text" class="form-control" name="oskey" placeholder="Enter Laptop OS Key" id="oskey">
+    <input type="text" class="form-control" name="oskey" placeholder="Enter Laptop OS Key" id="oskey" required>
   </div>
   <div class="form-group">
     <label for="text">OS Version:</label>
-    <input type="text" class="form-control" name="osversion" placeholder="Enter Laptop OS Version" id="osversion">
+    <input type="text" class="form-control" name="osversion" placeholder="Enter Laptop OS Version" id="osversion" required>
   </div>
   <div class="form-group">
     <label for="text">Vendor:</label>
-    <input type="text" class="form-control" name="vendor" placeholder="Enter Laptop Vendor" id="vendor">
+    <input type="text" class="form-control" name="vendor" placeholder="Enter Laptop Vendor" id="vendor" required>
   </div>
   <div class="form-group">
     <label for="text">Procrument Refference:</label>
-    <input type="text" class="form-control" name="procrumentref" placeholder="Enter Procrument Refference" id="procrumentref">
+    <input type="text" class="form-control" name="procrumentref" placeholder="Enter Procrument Refference" id="procrumentref" required>
   </div>
   <tr>
           <td>RAM:</td>
@@ -143,6 +143,7 @@ include('header.php');
           <td>Warranty Year:</td>
           <td>
             <select name="warranty">
+              <option>0</option>
               <option>1</option>
               <option>2</option>
               <option>3</option>
@@ -156,12 +157,12 @@ include('header.php');
         </tr>
         <br></br>
         <label for="delevery date">Purchase Date:</label>
-        <input type="date" id="delevery date" name="deleverydate">
+        <input type="date" id="delevery date" name="deleverydate" required>
 
         <br></br>
 
         <label for="procurement date">Delevery Date:</label>
-        <input type="date" id="procurement date" name="procurementdate">
+        <input type="date" id="procurement date" name="procurementdate" required>
  
 
 
@@ -206,7 +207,7 @@ include('header.php');
   </div>
   <div class="form-group">
     <label for="id">Laptop Username</label>
-    <input type="id" class="form-control" name="lusername" placeholder="Enter Laptop Username" id="uusername" required>
+    <input type="id" class="form-control" name="lusername" placeholder="Enter Laptop Username" id="uusername" >
     <input type="hidden" class="form-control" id="husername" name="husername" placeholder="Enter Laptop Username" required>
   </div>
   

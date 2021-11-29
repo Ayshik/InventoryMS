@@ -2,7 +2,7 @@
     <strong>Copyright &copy; 2021-2022 <a href="https://www.facebook.com/SaifMinha2/">Minhazul Islam</a>.</strong>
     All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 0.0.1
+      <b>Version</b> 0.0.3
     </div>
   </footer>
 

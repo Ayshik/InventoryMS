@@ -37,9 +37,10 @@ else
 
   $query="INSERT INTO `employee`(`sl`, `name`, `id`, `department`, `designation`, `laptop`, `bag`, `mouse`,`location`) VALUES ('','$name','$id','$designation','$department','$laptop','$mouse','$bag','$location')";
   $query2="INSERT INTO `allocation`( `name`, `employeeid`, `department`,`assetid`) VALUES ('$name','$id','$department','$laptop')";
+ 
   //echo $query;
  
-  $query3="UPDATE `laptop` SET `status`='Boocked' where assetid='$laptop'";
+  $query3="UPDATE `laptop` SET `status`='Boocked' ,`designation`='$designation',`department`='$department',`location`='$location'where assetid='$laptop'";
 execute($query);
 execute($query2);
 execute($query3);
@@ -87,7 +88,7 @@ header("Location:../employee.php");
   $deleverydate=$_POST["deleverydate"];
   $procurementdate=$_POST["procurementdate"];
 
-  $query="INSERT INTO `laptop`(`assetid`, `model`, `laptopusername`, `maker`, `hostname`, `ip`, `domain`, `cpu`, `oskey`, `osversion`, `vendor`, `procrumentref`, `ram`, `hdd`, `warranty`, `deleverydate`, `procurementdate`,`status`,`Customization`,`serial`,`ssd`) VALUES ('$assetid','$model','$laptopusername','$maker','$hostname','$ip','$domain','$cpu','$oskey','$osversion','$vendor','$procrumentref','$ram','$hdd','$warranty','$deleverydate','$procurementdate','Free','no','$serial','$ssd')";
+  $query="INSERT INTO `laptop`(`assetid`, `model`, `laptopusername`, `maker`, `hostname`, `ip`, `domain`, `cpu`, `oskey`, `osversion`, `vendor`, `procrumentref`, `ram`, `hdd`, `warranty`, `deleverydate`, `procurementdate`,`status`,`Customization`,`serial`,`ssd`,`location`) VALUES ('$assetid','$model','$laptopusername','$maker','$hostname','$ip','$domain','$cpu','$oskey','$osversion','$vendor','$procrumentref','$ram','$hdd','$warranty','$deleverydate','$procurementdate','Free','no','$serial','$ssd','IPDC-HQ')";
   //echo $query;
 execute($query);
 header("Location:../laptop.php");
