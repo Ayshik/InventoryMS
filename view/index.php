@@ -42,6 +42,16 @@ if($query="SELECT count(sl) AS total FROM laptop"){
 }
 
 
+
+
+if($query="SELECT count(sl) AS total FROM admin"){
+  $result=mysqli_query($conn,$query);
+  $values=mysqli_fetch_assoc($result);
+  $ad=$values["total"];
+
+
+}
+
 if($query="SELECT count(sl) AS total FROM laptop where status='Free'"){
   $result=mysqli_query($conn,$query);
   $values=mysqli_fetch_assoc($result);
@@ -96,6 +106,11 @@ if($query="SELECT count(sl) AS total FROM laptop where status='Boocked'"){
   }
 
 }
+
+
+
+
+
 ?>
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -124,6 +139,23 @@ if($query="SELECT count(sl) AS total FROM laptop where status='Boocked'"){
         <div class="row">
           
           <!-- ./col -->
+
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-secondary">
+              <div class="inner">
+                <h3><?php echo $ad ; ?><sup style="font-size: 20px"></sup></h3>
+
+                <p>Total Admin</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-stats-bars"></i>
+              </div>
+              <a href="admin.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+
+
           <div class="col-lg-3 col-6">
             <!-- small box -->
             <div class="small-box bg-success">
@@ -174,6 +206,12 @@ if($query="SELECT count(sl) AS total FROM laptop where status='Boocked'"){
             
           </div>
           <!-- ./col -->
+
+
+       
+
+
+
           <div class="col-lg-3 col-6">
             <!-- small box -->
             <div class="small-box bg-success">
