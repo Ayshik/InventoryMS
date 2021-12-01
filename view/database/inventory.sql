@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 01, 2021 at 02:07 PM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.11
+-- Generation Time: Dec 01, 2021 at 05:08 PM
+-- Server version: 10.4.20-MariaDB
+-- PHP Version: 8.0.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -32,8 +32,17 @@ CREATE TABLE `admin` (
   `adname` varchar(100) NOT NULL,
   `addepartment` varchar(100) NOT NULL,
   `ademail` varchar(100) NOT NULL,
-  `admobile` varchar(100) NOT NULL
+  `admobile` varchar(100) NOT NULL,
+  `adpassword` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`sl`, `adname`, `addepartment`, `ademail`, `admobile`, `adpassword`) VALUES
+(1, 'Ayshik', 'EEE', 'Ayshikmee@gmail.com', '01775503498', '@Ayshikmee!!'),
+(3, 'Saif', 'IT', 'Saif@gmail.com', '12345678', '12345');
 
 -- --------------------------------------------------------
 
@@ -157,7 +166,7 @@ ALTER TABLE `laptop`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `sl` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `sl` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `allocation`
