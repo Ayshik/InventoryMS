@@ -1,3 +1,19 @@
+
+<?php
+      session_start();
+	 include('Controllers/userval.php');
+
+  
+if (!isLoggedIn()) {
+
+  header('location: login.php');
+}
+
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,6 +63,7 @@
       <li class="nav-item d-none d-sm-inline-block">
         <a href="https://www.ipdcbd.com/" class="nav-link">Official Website</a>
       </li>
+</li>
     </ul>
 
     <!-- Right navbar links -->
@@ -83,6 +100,15 @@
       <li class="nav-item">
         <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
           <i class="fas fa-th-large"></i>
+        </a>
+      </li>
+
+
+
+
+      <li class="nav-item">
+        <a class="nav-link" data-widget="Logout" href="logout.php" role="button">
+        <i class="fas fa-sign-out-alt"></i>
         </a>
       </li>
     </ul>
@@ -129,7 +155,7 @@
            
           </li>
           <li class="nav-item">
-            <a href="admin.php" class="nav-link <?php echo $employee ?>">
+            <a href="admin.php" class="nav-link <?php echo $admin ?>">
               <i class="nav-icon fas fa-user"></i>
               <p>
                 Admin

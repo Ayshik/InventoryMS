@@ -1,6 +1,6 @@
 <?php
-require_once ('Controllers/employeecontroller.php');
-$info=getemployee();
+require_once ('Controllers/admincontroller.php');
+$info=admininfo();
 
 $servername = "localhost";
 $username = "root";
@@ -28,7 +28,7 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 
 
   }
-$employee="active";
+$admin="active";
 
 include('header.php');
 ?>
@@ -42,11 +42,9 @@ include('header.php');
 
           <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Add
+  Add Admin
 </button>
-<a href="Controllers/exportemployee.php"><button type="button" class="btn btn-primary">Export</button></a>
-
-<!-- Add employee -->
+<!-- Add admin -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -60,75 +58,42 @@ include('header.php');
 
 
 
-<form action="Controllers/employeecontroller.php" method="post">
+<form action="Controllers/admincontroller.php" method="post">
   <div class="form-group">
     <label for="name">Name:</label>
-    <input type="name" class="form-control" name="name" placeholder="Enter Name" id="name" required>
+    <input type="name" class="form-control" name="adname" placeholder="Enter Name" id="adname" required>
   </div>
   <div class="form-group">
     <label for="id">Department:</label>
-    <input type="id" class="form-control" name="id" placeholder="Enter ID" id="id" required>
+    <input type="id" class="form-control" name="addepartment" placeholder="Enter Department" id="addepartment" required>
   </div>
   <div class="form-group">
     <label for="designation">Email:</label>
-    <input type="designation" class="form-control" name="designation" placeholder="Enter Designation" id="designation" required>
+    <input type="designation" class="form-control" name="ademail" placeholder="Enter Email" id="ademail" required>
   </div>
   <div class="form-group">
     <label for="department">Mobile:</label>
-    <input type="department" class="form-control" placeholder="Enter Department" name="department" required>
+    <input type="department" class="form-control" placeholder="Enter Mobile Number" name="admobile" required>
   </div>
   <div class="form-group">
-    <label for="department">Privillege:</label>
-    <input type="location" class="form-control" placeholder="Enter Location" name="location" required>
+    <label for="department">Password:</label>
+    <input type="password" class="form-control" placeholder="Enter Password" name="adpassword" required>
   </div>
-  <div class="form-group">
-  <label for="department">Laptop Hostname:</label>
-  <select  class="form-control" name="laptop">
-  <option value="No">Null</option>
-  <?php while($row1=mysqli_fetch_array($result1));?>
-    <?php echo $options;?>
-  
-  
-  </select>
-  </div>
-  <input type="checkbox" id="vehicle1" name="mouse" value="yes">
-<label for="vehicle1"> Admin</label><br>
-<input type="checkbox" id="vehicle2" name="bag" value="yes">
-<label for="vehicle2"> User</label>
-
-
-
-
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" name="insertemp" class="btn btn-primary">Add</button>
+        <button type="submit" name="insertadmin" class="btn btn-primary">Add</button>
       </div>
       </form>
     </div>
   </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  </div>
 <!-- this is for update -->
 <div class="modal fade" id="updatepanel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Employee Update</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Admin Update</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -137,53 +102,35 @@ include('header.php');
 
 
 
-<form action="Controllers/inventorycontroller.php" method="post">
+<form action="Controllers/admincontroller.php" method="post">
   <div class="form-group">
   <input type="hidden" class="form-control" id="sl" name="sl" placeholder="Enter Name" required>
     <label for="name">Name:</label>
-    <input type="name" class="form-control" id="ename" name="name" placeholder="Enter Name" required>
+    <input type="name" class="form-control" id="name" name="name" placeholder="Enter Name" required>
   </div>
   <div class="form-group">
     <label for="id">Department:</label>
-    <input type="id" class="form-control" name="id" placeholder="Enter ID" id="eid" required>
+    <input type="id" class="form-control" name="department" placeholder="Enter Department" id="department" required>
   </div>
   <div class="form-group">
     <label for="designation">Email:</label>
-    <input type="designation" class="form-control" name="designation" placeholder="Enter Designation" id="edesignation" required>
+    <input type="email" class="form-control" name="email" placeholder="Enter Email" id="email" required>
   </div>
   <div class="form-group">
     <label for="department">Mobile:</label>
-    <input type="department" class="form-control" placeholder="Enter Department" name="department" id="edepartment" required>
+    <input type="mobile" class="form-control" placeholder="Enter Mobile Number" name="mobile" id="mobile" required>
   </div>
   <div class="form-group">
-    <label for="department">Privillege:</label>
-    <input type="location" class="form-control" placeholder="Enter Location" name="elocation" id="elocation" required>
+    <label for="department">Password:</label>
+    <input type="password" class="form-control" placeholder="Enter Password" name="password" id="password" required>
   </div>
-
-  <div class="form-group">
-    <label for="designation">Assigned Laptop:</label>
-    <input type="designation" class="form-control"  id="elaptop" name="alaptop" placeholder=""  readonly>
-  </div>
-  <input type="hidden" class="form-control" placeholder="" name="ihh" id="ihh" value="" required>
-  <div class="form-group">
-  <label for="department">Laptop Hostname:</label>
-  <select   class="form-control" name="laptop">
- 
-  <option value="No">Null</option>
-  <?php while($row1=mysqli_fetch_array($result1));?>
-    <?php echo $options;?>
   
   
-  </select>
-  </div>
- 
-
-
 
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" name="update" class="btn btn-primary">Update</button>
+        <button type="submit" name="updateadmin" class="btn btn-primary">Update</button>
       </div>
       </form>
     </div>
@@ -227,17 +174,14 @@ include('header.php');
                     echo "<tr>";
                      
                         echo "<td>".$infos["sl"]."</td>";
-						            echo "<td>".$infos["name"]."</td>";
-                        echo "<td>".$infos["id"]."</td>";
-                        echo "<td>".$infos["designation"]."</td>";
-                        echo "<td>".$infos["department"]."</td>";
-                        echo "<td>".$infos["laptop"]."</td>";
-                        echo "<td>".$infos["location"]."</td>";
-                        echo "<td>".$infos["bag"]."</td>";
-                        echo "<td>".$infos["mouse"]."</td>";
+						            echo "<td>".$infos["adname"]."</td>";
+                        echo "<td>".$infos["addepartment"]."</td>";
+                        echo "<td>".$infos["ademail"]."</td>";
+                        echo "<td>".$infos["admobile"]."</td>";
+                       echo "<td style=display: hidden>".$infos["adpassword"]."</td>";
             
  echo '<td><button class="btn btn-success editbutton" data-toggle="modal" name="editbutton"  ><a  i class="fa fa-pen" style="color:white">  Edit</a></td>';
-            echo '<td><button class="btn btn-danger"><a href="Controllers/Deleteemployee.php?id='.$infos["sl"].'&amp;eid='.$infos["id"].'&amp;dep='.$infos["department"].'&amp;des='.$infos["designation"].'&amp;essetid='.$infos["laptop"].'&amp;name='.$infos["name"].'" i class="fa fa-trash" style="color:white">  Release</a></td>';
+            echo '<td><button class="btn btn-danger"><a href="Controllers/admindelete.php?id='.$infos["sl"].'&amp; i class="fa fa-trash" style="color:white">  Release</a></td>';
 			
                     echo "</tr>";
                   }
@@ -273,13 +217,11 @@ return $(this).text();
 }).get();
 console.log(data);
 $('#sl').val(data[0]);
-$('#ename').val(data[1]);
-$('#eid').val(data[2]);
-$('#edesignation').val(data[3]);
-$('#edepartment').val(data[4]);
-$('#elocation').val(data[6]);
-$('#elaptop').val(data[5]);
-$('#ihh').val(data[5]);
+$('#name').val(data[1]);
+$('#department').val(data[2]);
+$('#email').val(data[3]);
+$('#mobile').val(data[4]);
+$('#password').val(data[5]);
 });
 
 
