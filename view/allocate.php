@@ -14,7 +14,7 @@ include('header.php');
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-          <h1 class="m-0">Allocated to Users</h1>
+          <a href="Controllers/exportallocation.php"><button type="button" class="btn btn-primary">Export</button></a>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -38,8 +38,8 @@ include('header.php');
       <th scope="col">SN</th>
       <th scope="col">Employee Name</th>
       <th scope="col">Employee ID</th>
-      <th scope="col">Department</th>
-      <th scope="col">Laptop ID</th>
+      <th scope="col">Designation</th>
+      <th scope="col">Laptop Hostname</th>
       <th scope="col"></th>
       <th scope="col"></th>
      

@@ -17,8 +17,7 @@ $info=history();
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-          <h1 class="m-0">User History</h1>
-          </div><!-- /.col -->
+          <a href="Controllers/exporthistory.php"><button type="button" class="btn btn-primary">Export</button></a>          </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="index.php">Home</a></li>
@@ -41,8 +40,8 @@ $info=history();
       <th scope="col">SN</th>
       <th scope="col">Employee Name</th>
       <th scope="col">Employee ID</th>
-      <th scope="col">Department</th>
-      <th scope="col">Laptop ID</th>
+      <th scope="col">Designation</th>
+      <th scope="col">Laptop Hostname</th>
     </tr>
   </thead>
   <tbody>

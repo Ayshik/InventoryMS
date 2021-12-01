@@ -161,7 +161,7 @@ if($query="SELECT count(sl) AS total FROM laptop where status='Boocked'"){
                 <h3><?php echo $lnv ; ?></h3>
 
 
-                <p>Laptops In Inventory</p>
+                <p>Laptops In Stock</p>
               </div>
               <div class="icon">
                 <i class="ion ion-pie-graph"></i>

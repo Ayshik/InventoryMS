@@ -2,7 +2,7 @@
 
   require_once '../Models/db_connect2.php';
 
-$query ="update laptop set status='Free',location='IPDC-HQ',designation='',department='' where assetid='$_GET[id]'";
+$query ="update laptop set status='Free',location='IPDC-HQ',designation='Not-Assigned',department='Not-Assigned' where assetid='$_GET[id]'";
 $query2 ="Delete from allocation where assetid='$_GET[id]'";
 $query3 ="update employee set laptop='No' where id='$_GET[eid]'";
 //echo $query;

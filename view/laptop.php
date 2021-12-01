@@ -49,7 +49,7 @@ include('header.php');
 
 <form action="Controllers/employeecontroller.php" method="post">
   <div class="form-group">
-    <label for="name">Laptop ID:</label>
+    <label for="name">Laptop Hostname:</label>
     <input type="name" class="form-control"name="assetid" placeholder="Enter Laptop ID" id="assetid" required>
   </div>
   <div class="form-group">
@@ -63,14 +63,14 @@ include('header.php');
   
   <div class="form-group">
     <label for="department">Laptop Username:</label>
-    <input type="department" class="form-control" name="laptopusername" placeholder="Enter Username" id="laptopusername" required>
+    <input type="department" class="form-control" name="laptopusername" placeholder="Enter Username" id="laptopusername">
   </div>
   <div class="form-group">
     <label for="text">Maker:</label>
     <input type="text" class="form-control" name="maker" placeholder="Enter Laptop Maker" id="maker" required>
   </div>
   <div class="form-group">
-    <label for="text">Hostname:</label>
+    <label for="text">Asset ID:</label>
     <input type="text" class="form-control" name="hostname" placeholder="Enter Hostname" id="hostname" required>
   </div>
   <div class="form-group">
@@ -105,14 +105,14 @@ include('header.php');
           <td>RAM:</td>
           <td>
             <select name="ram">
-              <option>4</option>
-              <option>8</option>
-              <option>12</option>
-              <option>16</option>
-              <option>20</option>
-              <option>24</option>
-              <option>28</option>
-              <option>32</option>
+              <option>4 GB</option>
+              <option>8 GB</option>
+              <option>12 GB</option>
+              <option>16 GB</option>
+              <option>20 GB</option>
+              <option>24 GB</option>
+              <option>28 GB</option>
+              <option>32 GB</option>
             </select>
           </td>
         </tr>
@@ -120,10 +120,11 @@ include('header.php');
           <td>HDD:</td>
           <td>
             <select name="hdd">
-              <option>HDD 128</option>
-              <option>HDD 256</option>
-              <option>HDD 512</option>
-              <option>HDD 1024</option>
+              <option>N/A</option>
+              <option>128 GB</option>
+              <option>256 GB</option>
+              <option>512 GB</option>
+              <option>1 TB</option>
 
             </select>
           </td>
@@ -132,10 +133,11 @@ include('header.php');
           <td>SSD:</td>
           <td>
             <select name="ssd">
-              <option>SSD 128</option>
-              <option>SSD 256</option>
-              <option>SSD 512</option>
-              <option>SSD 1024</option>
+              <option>N/A</option>
+              <option>128 GB</option>
+              <option>256 GB</option>
+              <option>512 GB</option>
+              <option>1 TB</option>
             </select>
           </td>
         </tr>
@@ -143,7 +145,7 @@ include('header.php');
           <td>Warranty Year:</td>
           <td>
             <select name="warranty">
-              <option>0</option>
+              <option>N/A</option>
               <option>1</option>
               <option>2</option>
               <option>3</option>
@@ -201,7 +203,7 @@ include('header.php');
 
 <form action="Controllers/inventorycontroller.php" method="post">
   <div class="form-group">
-    <label for="name">Laptop ID</label>
+    <label for="name">Laptop Hostname</label>
     <input type="name" class="form-control" id="uassetid" name="lassetid" placeholder="Enter Asset ID" required>
     <input type="hidden" class="form-control" id="sl" name="sl" placeholder="Enter Asset ID" required>
   </div>
@@ -212,7 +214,7 @@ include('header.php');
   </div>
   
   <div class="form-group">
-    <label for="designation">Host Name</label>
+    <label for="designation">Asset ID</label>
     <input type="designation" class="form-control" name="lhostname" placeholder="Enter Host Name" id="uhostname" required>
     <input type="hidden" class="form-control" id="hhostname" name="hhostname" placeholder="" required>
   </div>
@@ -242,14 +244,14 @@ include('header.php');
           <td>
             <select name="lram" id="uram">
            
-              <option>4</option>
-              <option>8</option>
-              <option>12</option>
-              <option>16</option>
-              <option>20</option>
-              <option>24</option>
-              <option>28</option>
-              <option>32</option>
+              <option>4 GB</option>
+              <option>8 GB</option>
+              <option>12 GB</option>
+              <option>16 GB</option>
+              <option>20 GB</option>
+              <option>24 GB</option>
+              <option>28 GB</option>
+              <option>32 GB</option>
             </select>
           </td>
         </tr>
@@ -258,11 +260,11 @@ include('header.php');
           <td>HDD:</td>
           <td>
             <select name="lhdd" id="uhdd">
-           
-              <option>HDD 128</option>
-              <option>HDD 256</option>
-              <option>HDD 512</option>
-              <option>HDD 1024</option>
+              <option>N/A</option>
+              <option>128 GB</option>
+              <option>256 GB</option>
+              <option>512 GB</option>
+              <option>1 TB</option>
 
             </select>
           </td>
@@ -272,11 +274,11 @@ include('header.php');
           <td>SSD:</td>
           <td>
             <select name="lssd" id="ussd">
-            
-              <option>SSD 128</option>
-              <option>SSD 256</option>
-              <option>SSD 512</option>
-              <option>SSD 1024</option>
+              <option>N/A</option>
+              <option>128 GB</option>
+              <option>256 GB</option>
+              <option>512 GB</option>
+              <option>1 TB</option>
 
             </select>
           </td>
@@ -316,13 +318,13 @@ include('header.php');
   <thead>
     <tr>
     <th scope="col">SN</th>
-      <th scope="col">Laptop ID</th>
+      <th scope="col">Laptop Hostname</th>
       <th scope="col">Model</th>
       <th scope="col">Serial</th>
       
       <th scope="col">Laptop Username</th>
       <th scope="col">Maker</th>
-      <th scope="col">Hostname</th>
+      <th scope="col">Asset ID</th>
       <th scope="col">IP</th>
       <th scope="col">Domain</th>
       <th scope="col">RAM</th>

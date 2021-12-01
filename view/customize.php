@@ -35,10 +35,10 @@ $info=customizeinfo();
   <thead>
     <tr>
       <th scope="col">SN</th>
-      <th scope="col">Laptop ID</th>
+      <th scope="col">Laptop Hostname</th>
       <th scope="col">Laptop Username</th>
       
-      <th scope="col">Host Name</th>
+      <th scope="col">Asset ID</th>
       <th scope="col">IP</th>
       <th scope="col">Domain</th>
       <th scope="col">Oparatig System</th>

@@ -42,7 +42,7 @@ include('header.php');
 
           <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Add a New Employee
+  Add
 </button>
 <a href="Controllers/exportemployee.php"><button type="button" class="btn btn-primary">Export</button></a>
 
@@ -51,7 +51,7 @@ include('header.php');
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Employee Details</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Admin Details</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -66,19 +66,19 @@ include('header.php');
     <input type="name" class="form-control" name="name" placeholder="Enter Name" id="name" required>
   </div>
   <div class="form-group">
-    <label for="id">Employee ID:</label>
+    <label for="id">Department:</label>
     <input type="id" class="form-control" name="id" placeholder="Enter ID" id="id" required>
   </div>
   <div class="form-group">
-    <label for="designation">Designation:</label>
+    <label for="designation">Email:</label>
     <input type="designation" class="form-control" name="designation" placeholder="Enter Designation" id="designation" required>
   </div>
   <div class="form-group">
-    <label for="department">Department:</label>
+    <label for="department">Mobile:</label>
     <input type="department" class="form-control" placeholder="Enter Department" name="department" required>
   </div>
   <div class="form-group">
-    <label for="department">Location:</label>
+    <label for="department">Privillege:</label>
     <input type="location" class="form-control" placeholder="Enter Location" name="location" required>
   </div>
   <div class="form-group">
@@ -92,9 +92,9 @@ include('header.php');
   </select>
   </div>
   <input type="checkbox" id="vehicle1" name="mouse" value="yes">
-<label for="vehicle1"> Mouse</label><br>
+<label for="vehicle1"> Admin</label><br>
 <input type="checkbox" id="vehicle2" name="bag" value="yes">
-<label for="vehicle2"> Bag</label>
+<label for="vehicle2"> User</label>
 
 
 
@@ -144,19 +144,19 @@ include('header.php');
     <input type="name" class="form-control" id="ename" name="name" placeholder="Enter Name" required>
   </div>
   <div class="form-group">
-    <label for="id">Employee ID:</label>
+    <label for="id">Department:</label>
     <input type="id" class="form-control" name="id" placeholder="Enter ID" id="eid" required>
   </div>
   <div class="form-group">
-    <label for="designation">Designation:</label>
+    <label for="designation">Email:</label>
     <input type="designation" class="form-control" name="designation" placeholder="Enter Designation" id="edesignation" required>
   </div>
   <div class="form-group">
-    <label for="department">Department:</label>
+    <label for="department">Mobile:</label>
     <input type="department" class="form-control" placeholder="Enter Department" name="department" id="edepartment" required>
   </div>
   <div class="form-group">
-    <label for="department">Location:</label>
+    <label for="department">Privillege:</label>
     <input type="location" class="form-control" placeholder="Enter Location" name="elocation" id="elocation" required>
   </div>
 
@@ -191,31 +191,11 @@ include('header.php');
 </div>
 <!-- End update -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-              <li class="breadcrumb-item active">Employee</li>
+              <li class="breadcrumb-item active">Admin</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -233,13 +213,9 @@ include('header.php');
     <tr>
       <th scope="col">SN</th>
       <th scope="col">Name</th>
-      <th scope="col">Employee ID</th>
       <th scope="col">Department</th>
-      <th scope="col">Designation</th>
-      <th scope="col">Laptop Hostname</th>
-      <th scope="col">Location</th>
-      <th scope="col">Bag</th>
-      <th scope="col">Mouse</th>
+      <th scope="col">Email</th>
+      <th scope="col">Mobile</th>
       <th scope="col"></th>
 	  <th scope="col"></th>
     </tr>

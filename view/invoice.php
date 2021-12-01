@@ -36,7 +36,7 @@ $info=invoiceinfo();
   <thead>
     <tr>
       <th scope="col">SN</th>
-      <th scope="col">Laptop ID</th>
+      <th scope="col">Laptop Hostname</th>
       <th scope="col">Vendor</th>
       <th scope="col">Purchase Date</th>
       <th scope="col">Procurement Reference</th>

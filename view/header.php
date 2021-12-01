@@ -129,6 +129,15 @@
            
           </li>
           <li class="nav-item">
+            <a href="admin.php" class="nav-link <?php echo $employee ?>">
+              <i class="nav-icon fas fa-user"></i>
+              <p>
+                Admin
+                
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="employee.php" class="nav-link <?php echo $employee ?>">
               <i class="nav-icon fas fa-copy"></i>
               <p>
@@ -149,7 +158,7 @@
             <a href="inventory.php" class="nav-link <?php echo $inventory ?>">
               <i class="nav-icon fas fa-edit"></i>
               <p>
-                Laptop Inventory
+                Laptop in Stock
               </p>
             </a>
           </li>

@@ -38,7 +38,7 @@ include('header.php');
       <th scope="col">SN</th>
       <th scope="col">Laptop Model</th>
       <th scope="col">Serial Number</th>
-      <th scope="col">Laptop ID</th>
+      <th scope="col">Laptop Hostname</th>
      
     </tr>
   </thead>

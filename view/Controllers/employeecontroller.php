@@ -88,7 +88,7 @@ header("Location:../employee.php");
   $deleverydate=$_POST["deleverydate"];
   $procurementdate=$_POST["procurementdate"];
 
-  $query="INSERT INTO `laptop`(`assetid`, `model`, `laptopusername`, `maker`, `hostname`, `ip`, `domain`, `cpu`, `oskey`, `osversion`, `vendor`, `procrumentref`, `ram`, `hdd`, `warranty`, `deleverydate`, `procurementdate`,`status`,`Customization`,`serial`,`ssd`,`location`) VALUES ('$assetid','$model','$laptopusername','$maker','$hostname','$ip','$domain','$cpu','$oskey','$osversion','$vendor','$procrumentref','$ram','$hdd','$warranty','$deleverydate','$procurementdate','Free','no','$serial','$ssd','IPDC-HQ')";
+  $query="INSERT INTO `laptop`(`assetid`, `model`, `laptopusername`, `maker`, `hostname`, `ip`, `domain`, `cpu`, `oskey`, `osversion`, `vendor`, `procrumentref`, `ram`, `hdd`, `warranty`, `deleverydate`, `procurementdate`,`status`,`Customization`,`serial`,`ssd`,`location`,`designation`,`department`) VALUES ('$assetid','$model','$laptopusername','$maker','$hostname','$ip','$domain','$cpu','$oskey','$osversion','$vendor','$procrumentref','$ram','$hdd','$warranty','$deleverydate','$procurementdate','Free','no','$serial','$ssd','IPDC-HQ','Not-Assigned','Not-Assigned')";
   //echo $query;
 execute($query);
 header("Location:../laptop.php");
