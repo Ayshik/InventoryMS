@@ -142,14 +142,14 @@ if($query="SELECT count(sl) AS total FROM laptop where status='Boocked'"){
 
           <div class="col-lg-3 col-6">
             <!-- small box -->
-            <div class="small-box bg-secondary">
+            <div class="small-box bg-dark">
               <div class="inner">
                 <h3><?php echo $ad ; ?><sup style="font-size: 20px"></sup></h3>
 
                 <p>Total Admin</p>
               </div>
               <div class="icon">
-                <i class="ion ion-stats-bars"></i>
+                <i class="fas fa-user-shield"></i>
               </div>
               <a href="admin.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
@@ -165,7 +165,7 @@ if($query="SELECT count(sl) AS total FROM laptop where status='Boocked'"){
                 <p>Total Employees</p>
               </div>
               <div class="icon">
-                <i class="ion ion-person-add"></i>
+                <i class="fas fa-users"></i>
               </div>
               <a href="employee.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
@@ -180,7 +180,7 @@ if($query="SELECT count(sl) AS total FROM laptop where status='Boocked'"){
                 <p>Total Laptops</p>
               </div>
               <div class="icon">
-                <i class="ion ion-laptop"></i>
+                <i class="fas fa-laptop"></i>
               </div>
               <a href="laptop.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
@@ -188,7 +188,7 @@ if($query="SELECT count(sl) AS total FROM laptop where status='Boocked'"){
           <!-- ./col -->
           <div class="col-lg-3 col-6">
             <!-- small box -->
-            <div class="small-box bg-danger">
+            <div class="small-box bg-info">
               <div class="inner">
                 <h3><?php echo $lnv ; ?></h3>
 
@@ -196,7 +196,7 @@ if($query="SELECT count(sl) AS total FROM laptop where status='Boocked'"){
                 <p>Laptops In Stock</p>
               </div>
               <div class="icon">
-                <i class="ion ion-pie-graph"></i>
+                <i class="fas fa-laptop-house"></i>
               </div>
               <a href="inventory.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
@@ -206,22 +206,16 @@ if($query="SELECT count(sl) AS total FROM laptop where status='Boocked'"){
             
           </div>
           <!-- ./col -->
-
-
-       
-
-
-
           <div class="col-lg-3 col-6">
             <!-- small box -->
-            <div class="small-box bg-success">
+            <div class="small-box bg-danger">
               <div class="inner">
                 <h3><?php echo $fal ; ?><sup style="font-size: 20px"></sup></h3>
 
                 <p>Faulty Laptops</p>
               </div>
               <div class="icon">
-                <i class="ion ion-stats-bars"></i>
+                <i class="fas fa-skull-crossbones"></i>
               </div>
               <a href="faulty.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
@@ -229,27 +223,27 @@ if($query="SELECT count(sl) AS total FROM laptop where status='Boocked'"){
           <!-- ./col -->
           <div class="col-lg-3 col-6">
             <!-- small box -->
-            <div class="small-box bg-danger">
+            <div class="small-box bg-primary ">
               <div class="inner">
                 <h3><?php echo $cus ; ?></h3>
 
                 <p>Customized Laptops</p>
               </div>
               <div class="icon">
-                <i class="ion ion-laptop"></i>
+                <i class="fas fa-tools"></i>
               </div>
               <a href="customize.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
 		   <div class="col-lg-3 col-6">
-		  <div class="small-box bg-info">
+		  <div class="small-box bg-secondary">
               <div class="inner">
                 <h3><?php echo $book ; ?></h3>
 
                 <p>Laptops are Allocated to Users</p>
               </div>
               <div class="icon">
-                <i class="ion ion-bag"></i>
+                <i class="fas fa-user-tag"></i>
               </div>
               <a href="allocate.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>

@@ -156,7 +156,7 @@ if (!isLoggedIn()) {
           </li>
           <li class="nav-item">
             <a href="admin.php" class="nav-link <?php echo $admin ?>">
-              <i class="nav-icon fas fa-user"></i>
+              <i class="nav-icon fas fa-user-shield"></i>
               <p>
                 Admin
                 
@@ -165,7 +165,7 @@ if (!isLoggedIn()) {
           </li>
           <li class="nav-item">
             <a href="employee.php" class="nav-link <?php echo $employee ?>">
-              <i class="nav-icon fas fa-copy"></i>
+              <i class="nav-icon fas fa-users"></i>
               <p>
                 Employee List
                 
@@ -182,7 +182,7 @@ if (!isLoggedIn()) {
           </li>
           <li class="nav-item">
             <a href="inventory.php" class="nav-link <?php echo $inventory ?>">
-              <i class="nav-icon fas fa-edit"></i>
+              <i class="nav-icon fas fa-laptop-house"></i>
               <p>
                 Laptop in Stock
               </p>
@@ -190,7 +190,7 @@ if (!isLoggedIn()) {
           </li>
           <li class="nav-item">
             <a href="allocate.php" class="nav-link <?php echo $allocate ?>">
-              <i class="nav-icon fas fa-table"></i>
+              <i class="nav-icon fas fa-user-tag"></i>
               <p>
                 Allocated to Users
               </p>
@@ -200,7 +200,7 @@ if (!isLoggedIn()) {
          
           <li class="nav-item">
             <a href="faulty.php" class="nav-link <?php echo $faulty ?>">
-              <i class="nav-icon fas fa-book"></i>
+              <i class="nav-icon fas fa-skull-crossbones"></i>
               <p>
                 Faulty Laptops
               </p>
@@ -208,7 +208,7 @@ if (!isLoggedIn()) {
           </li>
           <li class="nav-item">
             <a href="customize.php" class="nav-link <?php echo $customize ?>">
-              <i class="nav-icon far fa-plus-square"></i>
+              <i class="nav-icon fas fa-tools"></i>
               <p>
                 Customized Laptops
               </p>
@@ -216,7 +216,7 @@ if (!isLoggedIn()) {
           </li>
           <li class="nav-item">
             <a href="invoice.php" class="nav-link <?php echo $invoice ?>">
-              <i class="nav-icon fas fa-search"></i>
+              <i class="nav-icon fas fa-file-invoice-dollar"></i>
               <p>
                 Invoice
               </p>
@@ -224,7 +224,7 @@ if (!isLoggedIn()) {
           </li>
           <li class="nav-item">
             <a href="history.php" class="nav-link <?php echo $history ?>">
-              <i class="nav-icon fas fa-th"></i>
+              <i class="nav-icon fas fa-history"></i>
               <p>
                 User History
               </p>

@@ -1,8 +1,8 @@
  <footer class="main-footer">
-    <strong>Copyright &copy; 2021-2022 <a href="https://www.facebook.com/SaifMinha2/">Minhazul Islam</a>.</strong>
+    <strong>Copyright &copy; 2021-2022 <a href="https://www.ipdcbd.com/">IPDC Finance</a>.</strong>
     All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 0.0.3
+      <b>Version</b> 0.0.5
     </div>
   </footer>
 

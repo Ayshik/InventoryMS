@@ -71,7 +71,7 @@ $eror = "error";
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Log in</title>
+  <title>Login | Inventory MS</title>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -85,7 +85,7 @@ $eror = "error";
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="../../index2.html"><b>IPDC</b>Login</a>
+    <a href="#"><b>IPDC</b>Login</a>
   </div>
   <!-- /.login-logo -->
   <div class="card">
@@ -115,7 +115,7 @@ $eror = "error";
           <center>
           <div class="col-4">
             
-            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+            <button type="submit" class="btn btn-success btn-block">Sign In</button>
           </div>
           <!-- /.col -->
         </div>

@@ -177,9 +177,6 @@ include('header.php');
   </select>
   </div>
  
-
-
-
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -190,26 +187,6 @@ include('header.php');
   </div>
 </div>
 <!-- End update -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
           </div><!-- /.col -->
           <div class="col-sm-6">
